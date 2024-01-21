@@ -1,7 +1,7 @@
-package com.example.mobileappfinal.Business_layer.product;
+package com.example.mobileappfinal.Business_layer.Product;
 
 import com.example.mobileappfinal.DTO.Product;
-import com.example.mobileappfinal.Data_layer.product.ProductDatabase;
+import com.example.mobileappfinal.Data_layer.Product.ProductDatabase;
 
 public class SpecifyProductManager {
     private ProductDatabase productDatabase;

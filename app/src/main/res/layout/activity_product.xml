@@ -210,7 +210,7 @@
                     android:id="@+id/textView24"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="53dp"
+                    android:layout_marginStart="49dp"
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/calibri"
                     android:text="@string/txtColon"
@@ -220,7 +220,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
                 <TextView
-                    android:id="@+id/txtQuantityProduct"
+                    android:id="@+id/txtAvailableAmount"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
@@ -235,7 +235,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/txtCategoryProduct" />
 
                 <TextView
-                    android:id="@+id/txtQuantitySoldProduct"
+                    android:id="@+id/txtSoldAmount"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
@@ -247,7 +247,7 @@
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView27"
-                    app:layout_constraintTop_toBottomOf="@+id/txtQuantityProduct" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtAvailableAmount" />
 
                 <TextView
                     android:id="@+id/textView28"
@@ -294,7 +294,7 @@
                     android:id="@+id/textView29"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="38dp"
+                    android:layout_marginStart="40dp"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/calibri"
                     android:text="@string/txtColon"

@@ -1,7 +1,7 @@
-package com.example.mobileappfinal.Business_layer.product;
+package com.example.mobileappfinal.Business_layer.Product;
 
 import com.example.mobileappfinal.DTO.Product;
-import com.example.mobileappfinal.Data_layer.product.ProductDatabase;
+import com.example.mobileappfinal.Data_layer.Product.ProductDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,5 +24,18 @@ public class ProductListManager {
         }
 
         return hotProducts;
+    }
+
+    public List<Product> getSimilarProductList(String productCategory) {
+        List<Product> allProducts = productDatabase.getProductList();
+        List<Product> similarProducts = new ArrayList<>();
+
+        for (Product product : allProducts) {
+            if (product.getCategory().equals(productCategory)) {
+                similarProducts.add(product);
+            }
+        }
+
+        return similarProducts;
     }
 }

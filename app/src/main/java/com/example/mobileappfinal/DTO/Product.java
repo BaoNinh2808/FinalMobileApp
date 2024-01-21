@@ -1,7 +1,5 @@
 package com.example.mobileappfinal.DTO;
 
-import android.graphics.drawable.BitmapDrawable;
-
 public class Product {
     private int id;
     private String name;

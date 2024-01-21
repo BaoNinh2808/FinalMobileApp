@@ -1,5 +1,20 @@
 <resources>
     <string name="app_name">MobileAppFinal</string>
 
-    <string name="cactusUrl">https://drive.google.com/file/d/1V2cQCw2Cs2fF4Uli9Uybqa49-SiUXEsW/view?usp=sharing</string>
+
+    <string name="contentDesImage">top4CateImage</string>
+    <string name="product_name_label">Product Name</string>
+    <string name="product_price_label">Product Price</string>
+    <string name="DesImage">Description</string>
+    <string name="product_description_contents">Product description contents</string>
+    <string name="txtColon">:</string>
+    <string name="quantityLabel">Quantity</string>
+    <string name="number_of_quantity">number of quantity</string>
+    <string name="number_quantity_sold">number quantity sold</string>
+    <string name="quantity_sold_label">Quantity Sold</string>
+    <string name="category_content">Category content</string>
+    <string name="categoriesLabel">Categories</string>
+    <string name="similar_products">Similar Products</string>
+    <string name="add_to_cart_button_label">Add to Cart</string>
+    <string name="oneLabel">1</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.mobileappfinal.Data_layer.product;
+package com.example.mobileappfinal.Data_layer.Product;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -29,7 +29,7 @@ public class ProductDatabase {
     public void fetchProductList(){
         List<Product> productResponses = new ArrayList<>();
 
-        String cactusUrl = "https://drive.google.com/file/d/1V2cQCw2Cs2fF4Uli9Uybqa49-SiUXEsW/view?usp=sharing";
+        String cactusUrl = "https://firebasestorage.googleapis.com/v0/b/adding-data-71e6f.appspot.com/o/cactus.png?alt=media&token=8bb0bb1e-4db9-4224-8730-1e5d9e8603d9";
 
         productResponses.add(new Product(
                 1,
