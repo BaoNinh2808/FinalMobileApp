@@ -1,7 +1,7 @@
-package com.example.mobileappfinal.Business_layer.Product;
+package com.example.mobileappfinal.Business_layer.product;
 
 import com.example.mobileappfinal.DTO.Product;
-import com.example.mobileappfinal.Data_layer.Product.ProductDatabase;
+import com.example.mobileappfinal.Data_layer.product.ProductDatabase;
 
 import java.util.ArrayList;
 import java.util.List;

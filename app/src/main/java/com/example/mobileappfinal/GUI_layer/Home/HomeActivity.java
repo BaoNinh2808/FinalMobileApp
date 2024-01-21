@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobileappfinal.Business_layer.Product.ProductListManager;
+import com.example.mobileappfinal.Business_layer.product.ProductListManager;
 import com.example.mobileappfinal.DTO.Product;
 import com.example.mobileappfinal.R;
 

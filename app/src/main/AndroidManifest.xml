@@ -13,12 +13,13 @@
         android:theme="@style/Theme.MobileAppFinal"
         tools:targetApi="31">
         <activity
+            android:name=".GUI_layer.Product.ProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
-
-        <activity android:name=".GUI_layer.Home.HomeActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".GUI_layer.Home.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
