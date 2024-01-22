@@ -9,7 +9,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.mobileappfinal.R;
@@ -71,7 +70,7 @@ public class CategoriesFragment extends Fragment {
         // Inflate the layout for this fragment
         ViewGroup v = (ViewGroup) inflater.inflate(R.layout.fragment_categories, container, false);
 
-        Button btnShowView1 = v.findViewById(R.id.bed);
+        ImageButton btnShowView1 = v.findViewById(R.id.bed);
         btnShowView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,7 +82,7 @@ public class CategoriesFragment extends Fragment {
             }
         });
 
-        Button btnShowView2 = v.findViewById(R.id.Drawer);
+        ImageButton btnShowView2 = v.findViewById(R.id.Drawer);
         btnShowView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,7 +93,7 @@ public class CategoriesFragment extends Fragment {
             }
         });
 
-        Button btnShowView3 = v.findViewById(R.id.Desk);
+        ImageButton btnShowView3 = v.findViewById(R.id.Desk);
         btnShowView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,7 +104,7 @@ public class CategoriesFragment extends Fragment {
             }
         });
 
-        Button btnShowView4 = v.findViewById(R.id.chair);
+        ImageButton btnShowView4 = v.findViewById(R.id.chair);
         btnShowView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,7 +115,7 @@ public class CategoriesFragment extends Fragment {
             }
         });
 
-        Button btnShowView5 = v.findViewById(R.id.sofa);
+        ImageButton btnShowView5 = v.findViewById(R.id.sofa);
         btnShowView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -127,7 +126,7 @@ public class CategoriesFragment extends Fragment {
             }
         });
 
-        Button btnShowView6 = v.findViewById(R.id.table);
+        ImageButton btnShowView6 = v.findViewById(R.id.table);
         btnShowView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

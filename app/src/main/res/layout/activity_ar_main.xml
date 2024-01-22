@@ -100,7 +100,7 @@
             android:background="@drawable/login_box"
             android:orientation="vertical">
 
-            <include layout="@layout/activity_home" />
+            <include layout="@layout/activity_categories" />
         </LinearLayout>
     </SlidingDrawer>
 
