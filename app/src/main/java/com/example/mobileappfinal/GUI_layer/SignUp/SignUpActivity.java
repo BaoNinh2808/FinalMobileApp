@@ -19,10 +19,14 @@ import com.example.mobileappfinal.DTO.User;
 import com.example.mobileappfinal.GUI_layer.SignIn.SignInActivity;
 import com.example.mobileappfinal.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,7 +39,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -49,12 +56,15 @@ public class SignUpActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
 
+    FirebaseFirestore db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         setAndGetAllView();
         setEventClickButtonSignUp();
@@ -76,11 +86,16 @@ public class SignUpActivity extends AppCompatActivity {
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email, password, confirmPassword;
+                String email, password, confirmPassword, name;
 
                 email = editTextEmail.getText().toString();
                 password = editTextPassword.getText().toString();
                 confirmPassword = editTextConfirmPassword.getText().toString();
+                name = editTextName.getText().toString();
+
+                Map<String, Object> user = new HashMap<>();
+                user.put("email", email);
+                user.put("name", name);
 
                 HandlerWrongInput(email, password, confirmPassword, tvEmptyEmail, tvEmptyPassword, tvEmptyConfirmPassword, tvInvalidEmail, tvInvalidPassword, tvWrongConfirmPassword);
 
@@ -92,6 +107,9 @@ public class SignUpActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         Toast.makeText(SignUpActivity.this, "Account created",
                                                 Toast.LENGTH_SHORT).show();
+
+                                        AddUserToDataBase(user);
+
                                         Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
                                         startActivity(intent);
                                         finish();
@@ -108,6 +126,23 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void AddUserToDataBase(Map<String, Object> user) {
+        db.collection("user")
+                .add(user)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+    }
+
 
     private void setAndGetAllView() {
         editTextName = findViewById(R.id.editTextInputName);

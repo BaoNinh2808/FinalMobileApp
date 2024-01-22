@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
-        android:paddingTop="24dp"
         android:theme="@style/AppTheme.AppBarOverlay"
         app:elevation="0dp">
 
@@ -44,7 +43,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="64dp"
                         android:fontFamily="@font/calibri"
-                        android:text="Interior Shop"
+                        android:text="HOME"
                         android:textColor="#FFFFFF"
                         android:textSize="24sp" />
 
@@ -57,29 +56,6 @@
 
                 </RelativeLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/white_rounded_shape"
-                        android:drawableStart="@drawable/ic_search_light_gray"
-                        android:drawablePadding="8dp"
-                        android:fontFamily="@font/calibri"
-                        android:hint="What are you looking for ?"
-                        android:padding="12dp"
-                        android:textColor="@android:color/black"
-                        android:textColorHint="#aeaeae"
-                        android:textSize="14sp" />
-
-
-                </LinearLayout>
             </LinearLayout>
 
         </androidx.appcompat.widget.Toolbar>
@@ -298,71 +274,5 @@
             </LinearLayout>
 
         </ScrollView>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/favorite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="24dp"
-            android:src="@drawable/chair_light_gray_bg"
-            app:fabSize="normal" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="#FFFFFF"
-            android:elevation="4dp"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            android:weightSum="100">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/chair_light_gray_bg" />
-
-                <View
-                    android:layout_width="84dp"
-                    android:layout_height="2dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/colorPrimaryDark" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/person_linear_layout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/chair_light_gray_bg" />
-
-                <View
-                    android:layout_width="84dp"
-                    android:layout_height="2dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </LinearLayout>
-
     </RelativeLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,15 +1,20 @@
 package com.example.mobileappfinal.GUI_layer.Home;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobileappfinal.Business_layer.Product.ProductListManager;
 import com.example.mobileappfinal.DTO.Product;
+import com.example.mobileappfinal.GUI_layer.Product.ProductActivity;
 import com.example.mobileappfinal.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +24,6 @@ public class HomeActivity extends AppCompatActivity {
     private ProductAdapter productAdapter;
     private ProductListManager productListManager;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +32,39 @@ public class HomeActivity extends AppCompatActivity {
         productListManager = new ProductListManager();
 
         setAndGetAllView();
-        setHotProductList();
+        observeProductList();
     }
 
-    private void setHotProductList() {
-        List<Product> productList = productListManager.getHotProductList();
+    private void observeProductList() {
+        productListManager.getProductListLiveData().observe(this, new Observer<List<Product>>() {
+            @Override
+            public void onChanged(List<Product> productList) {
+                List<Product> hotProducts = new ArrayList<>();
 
+                for (Product product : productList) {
+                    if (product.getHot()) {
+                        hotProducts.add(product);
+                    }
+                }
+                setHotProductList(hotProducts);
+            }
+        });
+    }
+
+    private void setHotProductList(List<Product> productList) {
         productAdapter = new ProductAdapter(this, productList);
+
+        productAdapter.setOnItemClickListener(new ProductAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Product product) {
+                Intent intent = new Intent(getApplicationContext(), ProductActivity.class);
+                // I want to pass a product name to intent
+                Log.d("TEST_ID", product.getId());
+                intent.putExtra("product_id", product.getId());
+                startActivity(intent);
+            }
+        });
+
         recyclerView.setAdapter(productAdapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
     }
@@ -43,3 +73,4 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerViewProduct);
     }
 }
+
