@@ -9,6 +9,8 @@
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-185dp">
+
+
         <ImageButton
             android:id="@+id/back_button6"
             android:layout_width="35dp"
@@ -23,196 +25,209 @@
             android:scaleType="fitCenter"
             android:src="@drawable/back_button"/>
 
-
-        <RelativeLayout
-            android:id="@+id/types"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/back_button6"
-            android:layout_centerHorizontal="true">
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/back_button6" >
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/bed_content">
+                android:id="@+id/types"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <ImageButton
-                    android:id="@+id/table1"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:src="@drawable/table1"
-                    android:stateListAnimator="@null"
-                    android:scaleType="fitCenter"
-                    android:background="@color/transparent"/>
-                <TextView
+
+                <RelativeLayout
+                    android:id="@+id/bed_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/table1"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/table1"
+                        android:stateListAnimator="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/table1"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/gmarketsansbold"
+                        android:text="Table1"
+                        android:textColor="@color/brown" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/drawer_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Table1"
-                    android:textColor="@color/brown"
-                    android:layout_below="@id/table1"
-                    android:layout_centerInParent="true"
-                    android:fontFamily="@font/gmarketsansbold"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="15dp"/>
-            </RelativeLayout>
+                    android:layout_toRightOf="@+id/bed_content">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/drawer_content"
-                android:layout_toRightOf="@+id/bed_content">
+                    <ImageButton
+                        android:id="@+id/table2"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/table2"
+                        android:stateListAnimator="@null" />
 
-                <ImageButton
-                    android:id="@+id/table2"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:src="@drawable/table2"
-                    android:stateListAnimator="@null"
-                    android:scaleType="fitCenter"
-                    android:background="@color/transparent"/>
-                <TextView
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/table2"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/gmarketsansbold"
+                        android:text="Table2"
+                        android:textColor="@color/brown" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/desk_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Table2"
-                    android:textColor="@color/brown"
-                    android:layout_below="@id/table2"
-                    android:layout_centerInParent="true"
-                    android:fontFamily="@font/gmarketsansbold"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="15dp"/>
+                    android:layout_below="@+id/bed_content">
 
-            </RelativeLayout>
+                    <ImageButton
+                        android:id="@+id/table3"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/table3"
+                        android:stateListAnimator="@null" />
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/desk_content"
-                android:layout_below="@+id/bed_content">
-                <ImageButton
-                    android:id="@+id/table3"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:src="@drawable/table3"
-                    android:stateListAnimator="@null"
-                    android:scaleType="fitCenter"
-                    android:background="@color/transparent"/>
-                <TextView
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/table3"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/gmarketsansbold"
+                        android:text="Table3"
+                        android:textColor="@color/brown" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/chair_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Table3"
-                    android:textColor="@color/brown"
-                    android:layout_below="@id/table3"
-                    android:layout_centerInParent="true"
-                    android:fontFamily="@font/gmarketsansbold"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="15dp"/>
+                    android:layout_below="@+id/bed_content"
+                    android:layout_toRightOf="@+id/bed_content">
 
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/chair_content"
-                android:layout_toRightOf="@+id/bed_content"
-                android:layout_below="@+id/bed_content">
-                <ImageButton
-                    android:id="@+id/table4"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:src="@drawable/table4"
-                    android:stateListAnimator="@null"
-                    android:scaleType="fitCenter"
-                    android:background="@color/transparent"/>
-                <TextView
+                    <ImageButton
+                        android:id="@+id/table4"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/table4"
+                        android:stateListAnimator="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/table4"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/gmarketsansbold"
+                        android:text="Table4"
+                        android:textColor="@color/brown" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/sofa_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Table4"
-                    android:textColor="@color/brown"
-                    android:layout_below="@id/table4"
-                    android:layout_centerInParent="true"
-                    android:fontFamily="@font/gmarketsansbold"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="15dp"/>
-            </RelativeLayout>
+                    android:layout_below="@+id/desk_content">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/sofa_content"
-                android:layout_below="@+id/desk_content">
+                    <ImageButton
+                        android:id="@+id/table5"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/table5"
+                        android:stateListAnimator="@null" />
 
-                <ImageButton
-                    android:id="@+id/table5"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:src="@drawable/table5"
-                    android:stateListAnimator="@null"
-                    android:scaleType="fitCenter"
-                    android:background="@color/transparent"/>
-                <TextView
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/table5"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/gmarketsansbold"
+                        android:text="Table5"
+                        android:textColor="@color/brown" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/table_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Table5"
-                    android:textColor="@color/brown"
-                    android:layout_below="@id/table5"
-                    android:layout_centerInParent="true"
-                    android:fontFamily="@font/gmarketsansbold"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="15dp"/>
+                    android:layout_below="@+id/desk_content"
+                    android:layout_toRightOf="@+id/sofa_content">
+
+                    <ImageButton
+                        android:id="@+id/table6"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/table6"
+                        android:stateListAnimator="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/table6"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/gmarketsansbold"
+                        android:text="Table6"
+                        android:textColor="@color/brown" />
+                </RelativeLayout>
+
             </RelativeLayout>
+        </ScrollView>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/table_content"
-                android:layout_below="@+id/desk_content"
-                android:layout_toRightOf="@+id/sofa_content">
-
-                <ImageButton
-                    android:id="@+id/table6"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:src="@drawable/table6"
-                    android:stateListAnimator="@null"
-                    android:scaleType="fitCenter"
-                    android:background="@color/transparent"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Table6"
-                    android:textColor="@color/brown"
-                    android:layout_below="@id/table6"
-                    android:layout_centerInParent="true"
-                    android:fontFamily="@font/gmarketsansbold"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="15dp"/>
-            </RelativeLayout>
-
-        </RelativeLayout>
     </RelativeLayout>
 
 </FrameLayout>

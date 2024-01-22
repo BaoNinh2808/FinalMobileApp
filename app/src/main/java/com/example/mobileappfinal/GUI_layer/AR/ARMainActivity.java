@@ -128,6 +128,7 @@ public class ARMainActivity extends AppCompatActivity implements GLSurfaceView.R
 
     private static final String SEARCHING_PLANE_MESSAGE = "Searching for surfaces...";
 
+
     // Anchors created from taps used for object placing with a given color.
     private static class ColoredAnchor {
         public final Anchor anchor;
@@ -497,6 +498,10 @@ public class ARMainActivity extends AppCompatActivity implements GLSurfaceView.R
         }
     }
 
+    public void finish(View view) {
+        finish();
+    }
+
     /**
      * Shows a pop-up dialog on the first call, determining whether the user wants to enable
      * depth-based occlusion. The result of this dialog can be retrieved with useDepthForOcclusion().
@@ -647,19 +652,6 @@ public class ARMainActivity extends AppCompatActivity implements GLSurfaceView.R
     }
 
     public void captureMethod(View v) {
-//전에 작업했던 내용
-//    EGL10 egl = (EGL10) EGLContext.getEGL();
-//    GL10 gl = (GL10)egl.eglGetCurrentContext().getGL();
-//    v = getWindow().getDecorView();
-//
-//    String imagePath = null;
-//    Bitmap imageBitmap = createBitmapFromGLSurface(0, 0, v.getWidth(), v.getHeight(), gl);
-//
-//    if (imageBitmap != null) {
-//      imagePath = MediaStore.Images.Media.insertImage(getContentResolver(), imageBitmap, "DARI", null);
-//    }
-        //endregion
-
         captureBitmap(new BitmapReadyCallbacks() {
 
             @Override
@@ -669,7 +661,7 @@ public class ARMainActivity extends AppCompatActivity implements GLSurfaceView.R
         });
 
 
-        Toast.makeText(getApplicationContext(), "화면이 저장되었습니다", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Store capture image in device storage", Toast.LENGTH_SHORT).show();
     }
 
     private Bitmap createBitmapFromGLSurface(int x, int y, int w, int h, GL10 gl)
@@ -700,30 +692,30 @@ public class ARMainActivity extends AppCompatActivity implements GLSurfaceView.R
     }
 //endregion
 
-    //region=======객체 삭제 method=======
+    //region=======Delete method=======
     public void deleteMethod(View v) {
         if (anchors.size() >= 1) {
             anchors.get(anchors.size() - 1).anchor.detach();
             anchors.remove(anchors.size() - 1);
         }
-        Toast.makeText(getApplicationContext(), "삭제되었습니다", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Deleted Object", Toast.LENGTH_SHORT).show();
     }
     //endregion
 
-    //region=======객체 회전 method=======
+    //region=======Rotation method=======
     @Override
     public void OnRotation(RotationGestureDetector rotationDetector) {
         GlobalClass.rotateF = GlobalClass.rotateF + rotationDetector.getAngle() / 10;
     }
     //endregion
 
-    //region=======plane rendering 제거 method=======
+    //region=======plane rendering create/check method=======
     public void plane_check_Method(View v) {
         if(plane_check==0){
-            Toast.makeText(getApplicationContext(), "Plane Renderer가 제거되었습니다", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Plane Renderer is deleted", Toast.LENGTH_SHORT).show();
             plane_check=1;
         }else if(plane_check==1){
-            Toast.makeText(getApplicationContext(), "Plane Renderer가 생성되었습니다", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Plane Renderer is created", Toast.LENGTH_SHORT).show();
             plane_check=0;
         }
 

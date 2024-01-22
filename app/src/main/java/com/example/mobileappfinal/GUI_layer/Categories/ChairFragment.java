@@ -138,6 +138,28 @@ public class ChairFragment extends Fragment {
                 }
             }
         });
+        chair5 = (ImageButton) v.findViewById(R.id.chair5);
+        chair5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cnt == 0) {
+                    obj_file = "models/chair2.obj";
+                    png_file = "models/table_texture5.png";
+                    isObjectReplaced = true;
+                }
+            }
+        });
+        chair6 = (ImageButton) v.findViewById(R.id.chair6);
+        chair6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cnt == 0) {
+                    obj_file = "models/chair2.obj";
+                    png_file = "models/table_texture4.png";
+                    isObjectReplaced = true;
+                }
+            }
+        });
         return v;
     }
 }

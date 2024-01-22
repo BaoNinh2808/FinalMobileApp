@@ -26,7 +26,7 @@ public class DrawerFragment extends Fragment {
 
     private ImageButton drawer1;
     private ImageButton drawer2;
-    private ImageButton drawer3;
+    private ImageButton drawer3, drawer4, drawer5, drawer6;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -104,6 +104,46 @@ public class DrawerFragment extends Fragment {
             }
         });
         drawer3 = (ImageButton) v.findViewById(R.id.drawer3);
+        drawer3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cnt == 0) {
+                    obj_file = "models/storage3.obj";
+                    png_file = "models/bed_texture1.png";
+//                    cnt = cnt + 1;
+                    isObjectReplaced = true;
+                }
+
+            }
+        });
+
+        drawer4 = (ImageButton) v.findViewById(R.id.drawer4);
+        drawer4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cnt == 0) {
+                    obj_file = "models/storage1.obj";
+                    png_file = "models/table_texture5.png";
+//                    cnt = cnt + 1;
+                    isObjectReplaced = true;
+                }
+
+            }
+        });
+        drawer5 = (ImageButton) v.findViewById(R.id.drawer5);
+        drawer5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cnt == 0) {
+                    obj_file = "models/storage2.obj";
+                    png_file = "models/table_texture5.png";
+//                    cnt = cnt + 1;
+                    isObjectReplaced = true;
+                }
+
+            }
+        });
+        drawer6 = (ImageButton) v.findViewById(R.id.drawer6);
         drawer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

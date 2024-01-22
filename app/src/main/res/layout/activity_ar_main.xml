@@ -14,54 +14,70 @@
 
 
     <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="5dp"
+        android:background="@color/transparent"
+        android:onClick="finish"
+        android:scaleType="fitCenter"
+        android:src="@drawable/back_button"/>
+
+    <ImageButton
         android:id="@+id/delete_button"
         android:layout_width="38dp"
         android:layout_height="38dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_margin="25dp"
-        android:adjustViewBounds="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="5dp"
         android:background="@color/transparent"
+        android:onClick="deleteMethod"
         android:scaleType="fitCenter"
-        android:src="@drawable/delete_icon"
-        android:onClick="deleteMethod"/>
+        android:src="@drawable/delete_icon"/>
+
     <ImageButton
         android:id="@+id/plane_check_button"
         android:layout_width="38dp"
         android:layout_height="38dp"
-
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="25dp"
+        android:layout_below="@+id/delete_button"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
         android:adjustViewBounds="true"
         android:background="@color/transparent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/menu_plane_check"
         android:onClick="plane_check_Method"
-        android:layout_toRightOf="@+id/delete_button"
-        />
+        android:scaleType="fitCenter"
+        android:src="@drawable/menu_plane_check" />
 
     <ImageButton
         android:id="@+id/cap_button"
         android:layout_width="38dp"
         android:layout_height="38dp"
-        android:layout_toLeftOf="@+id/settings_button"
-        android:layout_marginTop="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/plane_check_button"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
         android:adjustViewBounds="true"
         android:background="@color/transparent"
         android:onClick="captureMethod"
         android:scaleType="fitCenter"
-        android:src="@drawable/capture_icon" />
+        android:src="@drawable/capture_icon"/>
 
     <ImageButton
         android:id="@+id/settings_button"
         android:layout_width="38dp"
         android:layout_height="38dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/cap_button"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_settings"
-        tools:ignore="RtlCompat" />
+        tools:ignore="RtlCompat"/>
 
 
     <SlidingDrawer
@@ -83,15 +99,15 @@
 
         <ImageButton
             android:id="@+id/handle"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_margin="25dp"
             android:adjustViewBounds="true"
             android:background="@color/transparent"
             android:scaleType="fitCenter"
-            android:src="@drawable/home_button" />
+            android:src="@drawable/ic_category" />
 
         <LinearLayout
             android:id="@+id/content"

@@ -138,7 +138,7 @@ public class SofaFragment extends Fragment {
             public void onClick(View view) {
                 if (cnt == 0) {
                     obj_file = "models/sofa5.obj";
-                    png_file = "models/bed5.png";
+                    png_file = "models/table_texture4.png";
                     isObjectReplaced = true;
                 }
             }
