@@ -89,35 +89,55 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/txtProductName"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:id="@+id/linearLayoutProductNameAndPrice"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="20dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="@string/product_name_label"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/txtProductPrice"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="20dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="@string/product_price_label"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtProductName" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/txtProductName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="bottom"
+                        android:text="@string/product_name_label"
+                        android:textColor="@color/black"
+                        android:textSize="27sp" />
+
+                    <TextView
+                        android:id="@+id/txtProductPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="20dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="bottom|end"
+                        android:text="@string/product_price_label"
+                        android:textColor="@color/black"
+                        android:textSize="27sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnTestWithAR"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/test_with_AR_button_label"
+                    android:textSize="17sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutProductNameAndPrice"/>
 
                 <View
                     android:id="@+id/line9"
@@ -128,14 +148,14 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="20dp"
                     android:background="@android:color/darker_gray"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtProductPrice"
+                    app:layout_constraintTop_toBottomOf="@+id/btnTestWithAR"
                     tools:ignore="MissingConstraints" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -358,13 +378,14 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="5dp"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/poppins_bold"
         android:text="@string/add_to_cart_button_label"
         android:textSize="17sp"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cardNumberSelectedProduct" />
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardNumberSelectedProduct"
