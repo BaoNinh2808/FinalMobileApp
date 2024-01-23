@@ -31,202 +31,24 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/back_button1">
 
-            <RelativeLayout
-                android:id="@+id/types"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:clipToPadding="false"
+                android:fadingEdgeLength="16dp"
+                android:overScrollMode="never"
+                android:paddingTop="8dp"
+                android:paddingBottom="60dp"
+                android:requiresFadingEdge="vertical"
+                android:scrollbars="vertical"
+                android:background="@color/transparent"/>
 
-
-                <RelativeLayout
-                    android:id="@+id/bed_content"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageButton
-                        android:id="@+id/bed1"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@color/transparent"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/bed1"
-                        android:stateListAnimator="@null" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/bed1"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="15dp"
-                        android:fontFamily="@font/gmarketsansbold"
-                        android:text="Bed1"
-                        android:textColor="@color/brown" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/drawer_content"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/bed_content">
-
-                    <ImageButton
-                        android:id="@+id/bed2"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@color/transparent"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/bed2"
-                        android:stateListAnimator="@null" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/bed2"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="15dp"
-                        android:fontFamily="@font/gmarketsansbold"
-                        android:text="Bed2"
-                        android:textColor="@color/brown" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/desk_content"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/bed_content">
-
-                    <ImageButton
-                        android:id="@+id/bed3"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@color/transparent"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/bed3"
-                        android:stateListAnimator="@null" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/bed3"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="15dp"
-                        android:fontFamily="@font/gmarketsansbold"
-                        android:text="Bed3"
-                        android:textColor="@color/brown" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/chair_content"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/bed_content"
-                    android:layout_toRightOf="@+id/bed_content">
-
-                    <ImageButton
-                        android:id="@+id/bed4"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@color/transparent"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/bed4"
-                        android:stateListAnimator="@null" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/bed4"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="15dp"
-                        android:fontFamily="@font/gmarketsansbold"
-                        android:text="Bed4"
-                        android:textColor="@color/brown" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/sofa_content"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/desk_content">
-
-                    <ImageButton
-                        android:id="@+id/bed5"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@color/transparent"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/bed5"
-                        android:stateListAnimator="@null" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/bed5"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="15dp"
-                        android:fontFamily="@font/gmarketsansbold"
-                        android:text="Bed5"
-                        android:textColor="@color/brown" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/table_content"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/desk_content"
-                    android:layout_toRightOf="@+id/sofa_content">
-
-                    <ImageButton
-                        android:id="@+id/bed6"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@color/transparent"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/bed6"
-                        android:stateListAnimator="@null" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/bed6"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="15dp"
-                        android:fontFamily="@font/gmarketsansbold"
-                        android:text="Bed6"
-                        android:textColor="@color/brown" />
-                </RelativeLayout>
-
-            </RelativeLayout>
         </ScrollView>
 
     </RelativeLayout>
