@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mobileappfinal.Business_layer.Object3D.Object3DListManager;
 import com.example.mobileappfinal.DTO.User;
 import com.example.mobileappfinal.GUI_layer.Home.HomeActivity;
 import com.example.mobileappfinal.GUI_layer.SignUp.SignUpActivity;
@@ -48,6 +49,8 @@ public class SignInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
+
+        Object3DListManager object3DListManager = new Object3DListManager();   // để fetch data từ firebase về
 
         mAuth = FirebaseAuth.getInstance();
 

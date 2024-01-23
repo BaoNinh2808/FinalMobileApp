@@ -1,9 +1,11 @@
 package com.example.mobileappfinal.GUI_layer.Categories;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -50,9 +52,21 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         holder.categoryName.setText(product.getName());
         Picasso.get().load(product.getImageUrl()).into(holder.categoryImage);
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
+        holder.categoryImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("CategoryAdapter", "Clicked on " + product.getName());
+                // Pass the clicked item to the external click handler
+                if (onItemClickListener != null) {
+                    onItemClickListener.onItemClick(product);
+                }
+            }
+        });
+
+        holder.categoryName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("CategoryAdapter", "Clicked on " + product.getName());
                 // Pass the clicked item to the external click handler
                 if (onItemClickListener != null) {
                     onItemClickListener.onItemClick(product);
@@ -69,7 +83,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
         TextView categoryName;
-        ImageView categoryImage;
+        ImageButton categoryImage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
