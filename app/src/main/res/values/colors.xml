@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#688ae2</color>
+    <color name="colorPrimaryDark">#688ae2</color>
+    <color name="colorAccent">#fb7b7b</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue">#FF0000FF</color>
+    <color name="mainBackGroundColor">#F2F6F9</color>
+
+    <color name="purple">#6C22A6</color>
+    <color name="darkpurple">#502075</color>
+
+    <color name="beige">#AF957B</color>
+    <color name="darkbrown">#4E3627</color>
+    <color name="brown">#F3604636</color>
+    <color name="browntransparent">#6B715645</color>
+    <color name="camel">#87644F</color>
+    <color name="lightblue">#88B4FF</color>
+    <color name="white_transparent">#54FFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

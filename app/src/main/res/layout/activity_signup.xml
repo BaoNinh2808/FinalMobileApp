@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GUI_layer.SignUp.SignUpActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Register"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:layout_marginRight="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="20sp"
+        android:layout_weight="0.1"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="YOUR NAME"
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="20sp"
+        android:textSize="10sp"
+        android:layout_weight="0.05"/>
+
+    <EditText
+        android:id="@+id/editTextInputName"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_weight="0.1"
+        android:hint="Input your name"
+        android:maxLength="30"
+        android:imeOptions="actionNext"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="EMAIL ID"
+        android:layout_marginTop="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="20sp"
+        android:textSize="10sp"
+        android:layout_weight="0.05"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="Input your email"
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="20sp"
+        android:textSize="15sp"
+        android:imeOptions="actionNext"
+        android:maxLength="30"
+        android:id="@+id/editTextInputEmail"
+        android:layout_weight="0.1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please enter your email"
+        android:paddingLeft="20dp"
+        android:textColor="#FF0000"
+        android:layout_marginTop="3dp"
+        android:visibility="gone"
+        android:id="@+id/tvEmptyEmailNotificationSignup">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Invalid Email"
+        android:paddingLeft="20dp"
+        android:textColor="#FF0000"
+        android:layout_marginTop="3dp"
+        android:visibility="gone"
+        android:id="@+id/tvInvalidEmailNotificationSignup">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="PASSWORD"
+        android:layout_marginTop="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="20sp"
+        android:textSize="10sp"
+        android:layout_weight="0.05"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="Input your password"
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="20sp"
+        android:textSize="15sp"
+        android:maxLength="30"
+        android:id="@+id/editTextInputPassword"
+        android:inputType="textPassword"
+        android:imeOptions="actionNext"
+        android:layout_weight="0.1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please enter your password"
+        android:paddingLeft="20dp"
+        android:textColor="#FF0000"
+        android:layout_marginTop="3dp"
+        android:visibility="gone"
+        android:id="@+id/tvEmptyPasswordNotificationSignup">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password must be 8 characters or more, including capital letters and special characters"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="#FF0000"
+        android:layout_marginTop="3dp"
+        android:visibility="gone"
+        android:id="@+id/tvInvalidPasswordNotificationSignup">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="CONFIRM PASSWORD"
+        android:layout_marginTop="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="20sp"
+        android:textSize="10sp"
+        android:layout_weight="0.05"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="Input confirm password"
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="20sp"
+        android:textSize="15sp"
+        android:maxLength="30"
+        android:inputType="textPassword"
+        android:imeOptions="actionDone"
+        android:id="@+id/editTextInputConfirmPassword"
+        android:layout_weight="0.1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please confirm the password"
+        android:paddingLeft="20dp"
+        android:textColor="#FF0000"
+        android:layout_marginTop="3dp"
+        android:visibility="gone"
+        android:id="@+id/tvEmptyConfirmPasswordNotificationSignup">
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm password do not match"
+        android:paddingLeft="20dp"
+        android:textColor="#FF0000"
+        android:layout_marginTop="3dp"
+        android:visibility="gone"
+        android:id="@+id/tvWrongConfirmPasswordNotificationSignup">
+    </TextView>
+
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/progressBarRegister"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:layout_marginTop="40sp"
+        android:layout_marginLeft="40sp"
+        android:layout_marginRight="40sp"
+        android:text="Create Account"
+        android:textAlignment="center"
+        android:id="@+id/buttonCreateAccount"
+        android:background="@color/black"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.05"
+        android:layout_margin="10sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Already a user?"
+            android:textAlignment="viewEnd"
+            android:layout_marginRight="20sp"
+            android:layout_weight="0.5"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Login now"
+            android:layout_marginLeft="20sp"
+            android:textColor="@color/blue"
+            android:textAlignment="viewStart"
+            android:id="@+id/loginNow"
+            android:layout_weight="0.5"/>
+    </LinearLayout>
+
+</LinearLayout>

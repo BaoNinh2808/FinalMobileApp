@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">MobileAppFinal</string>
+
+
+    <string name="contentDesImage">top4CateImage</string>
+    <string name="product_name_label">Product Name</string>
+    <string name="product_price_label">Product Price</string>
+    <string name="DesImage">Description</string>
+    <string name="product_description_contents">Product description contents</string>
+    <string name="txtColon">:</string>
+    <string name="quantityLabel">Available amount</string>
+    <string name="number_of_quantity">number of quantity</string>
+    <string name="number_quantity_sold">number quantity sold</string>
+    <string name="quantity_sold_label">Sold amount</string>
+    <string name="category_content">Category content</string>
+    <string name="categoriesLabel">Categories</string>
+    <string name="similar_products">Similar Products</string>
+    <string name="add_to_cart_button_label">Add to Cart</string>
+    <string name="test_with_AR_button_label">Test with AR</string>
+    <string name="oneLabel">1</string>
+
+
+    <string name="depth_use_explanation" translatable="false">When Depth is enabled on supported devices, virtual objects adapt to the environment by blending in with the real world.</string>
+    <string name="button_text_enable_depth" translatable="false">Enable</string>
+    <string name="button_text_disable_depth" translatable="false">Disable</string>
+    <string name="options_title_with_depth" translatable="false">Your device supports depth</string>
+    <string name="options_title_without_depth" translatable="false">Your device does not support depth</string>
+    <string name="done" translatable="false">Done</string>
+    <string-array name="depth_options_array" translatable="false">
+        <item>Enable depth</item>
+        <item>Show depth map</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
