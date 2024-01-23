@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,7 +24,7 @@
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/jalnan"
                 android:text="Categories"
-                android:textColor="@color/darkbrown"
+                android:textColor="@color/darkpurple"
                 android:textSize="30dp" />
 
             <ImageButton
@@ -31,12 +32,16 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_alignParentRight="true"
-                android:layout_margin="25dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
                 android:adjustViewBounds="true"
                 android:background="@color/transparent"
                 android:scaleType="fitCenter"
                 android:src="@drawable/menu_icon"
-                android:stateListAnimator="@null"/>
+                android:stateListAnimator="@null"
+                app:tint="@color/colorPrimary" />
 
             <TextView
                 android:id="@+id/subtitle"
@@ -47,7 +52,7 @@
                 android:fontFamily="@font/gmarketsanslight"
                 android:text="Design your home with DARI"
                 android:textSize="13dp"
-                android:textColor="@color/brown"/>
+                android:textColor="@color/purple"/>
 
 
             <RelativeLayout
@@ -73,7 +78,8 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/bed_button"
-                        android:stateListAnimator="@null"/>
+                        android:stateListAnimator="@null"
+                        app:tint="@color/colorPrimary"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -102,7 +108,8 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/drawer_button"
-                        android:stateListAnimator="@null"/>
+                        android:stateListAnimator="@null"
+                        app:tint="@color/colorPrimary"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -131,7 +138,8 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/desk_button"
-                        android:stateListAnimator="@null"/>
+                        android:stateListAnimator="@null"
+                        app:tint="@color/colorPrimary"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -160,7 +168,8 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/chair_button"
-                        android:stateListAnimator="@null"/>
+                        android:stateListAnimator="@null"
+                        app:tint="@color/colorPrimary"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -171,7 +180,8 @@
                         android:layout_marginBottom="15dp"
                         android:fontFamily="@font/gmarketsansbold"
                         android:text="chair"
-                        android:textColor="@color/brown" />
+                        android:textColor="@color/brown"
+                        />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -189,7 +199,9 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/sofa_button"
-                        android:stateListAnimator="@null"/>
+                        android:stateListAnimator="@null"
+                        app:tint="@color/colorPrimary"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -218,7 +230,8 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/table_button"
-                        android:stateListAnimator="@null"/>
+                        android:stateListAnimator="@null"
+                        app:tint="@color/colorPrimary"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -232,118 +245,6 @@
                 </RelativeLayout>
 
             </RelativeLayout>
-
-            <!--
-            <TextView
-                android:id="@+id/hot_items"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/types"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/gmarketsansmedium"
-                android:text="Hot Items >"
-                android:textSize="15dp"
-                android:textColor="@color/darkbrown"/>
-
-            <RelativeLayout
-                android:id="@+id/hot_items_list"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/hot_items"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="10dp"
-                android:layout_marginBottom="100dp">
-
-                <RelativeLayout
-                    android:id="@+id/fur1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <Button
-                        android:id="@+id/image1"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_margin="10dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/image1"
-                        android:layout_marginLeft="10dp"
-                        android:fontFamily="@font/gmarketsanslight"
-                        android:text="가구 이름"
-                        android:textColor="@color/darkbrown"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/fur2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/fur1">
-
-                    <Button
-                        android:id="@+id/image2"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_margin="10dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/image2"
-                        android:layout_marginLeft="10dp"
-                        android:fontFamily="@font/gmarketsanslight"
-                        android:text="가구 이름"
-                        android:textColor="@color/darkbrown"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/fur3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fur1">
-
-                    <Button
-                        android:id="@+id/image3"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_margin="10dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/image3"
-                        android:layout_marginLeft="10dp"
-                        android:fontFamily="@font/gmarketsanslight"
-                        android:text="가구 이름"
-                        android:textColor="@color/darkbrown"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/fur4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fur1"
-                    android:layout_toRightOf="@+id/fur3">
-
-                    <Button
-                        android:id="@+id/image4"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_margin="10dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/image4"
-                        android:layout_marginLeft="10dp"
-                        android:fontFamily="@font/gmarketsanslight"
-                        android:text="가구 이름"
-                        android:textColor="@color/darkbrown"/>
-                </RelativeLayout>
-            </RelativeLayout>
-            -->
 
         </RelativeLayout>
 

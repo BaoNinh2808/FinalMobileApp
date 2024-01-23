@@ -2,8 +2,8 @@ package com.example.mobileappfinal.GUI_layer.Categories;
 
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.cnt;
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.isObjectReplaced;
-import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.obj_file;
-import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.png_file;
+import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.obj_url;
+import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.png_url;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -87,8 +87,8 @@ public class SofaFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/sofa1.obj";
-                    png_file = "models/bed_texture3.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/sofa1.obj?alt=media&token=879cb97c-208b-4c3d-ae62-4f15fed89cfa";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed_texture3.png?alt=media&token=406a003f-bac4-4e0e-92cb-72bbc791e920";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -100,8 +100,8 @@ public class SofaFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/sofa2.obj";
-                    png_file = "models/table_texture5.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/sofa2.obj?alt=media&token=54d2df7e-5fa3-4f21-9d25-ad393dcfa3d8";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture5.png?alt=media&token=3fdc7c7f-c55f-4467-bd20-e668c8144cce";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -113,8 +113,8 @@ public class SofaFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/sofa3.obj";
-                    png_file = "models/table_texture5.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/sofa3.obj?alt=media&token=dd58fa31-1c4c-43b4-9710-579b20c5aaa7";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture5.png?alt=media&token=3fdc7c7f-c55f-4467-bd20-e668c8144cce";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -126,8 +126,8 @@ public class SofaFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/sofa4.obj";
-                    png_file = "models/table_texture4.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/sofa4.obj?alt=media&token=7180292d-ba6c-404d-bad0-35187f6d16ba";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture4.png?alt=media&token=0a68da70-a582-4470-bb3e-174bc80db289";
                     isObjectReplaced = true;
                 }
             }
@@ -137,8 +137,8 @@ public class SofaFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/sofa5.obj";
-                    png_file = "models/table_texture4.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/sofa4.obj?alt=media&token=7180292d-ba6c-404d-bad0-35187f6d16ba";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture4.png?alt=media&token=0a68da70-a582-4470-bb3e-174bc80db289";
                     isObjectReplaced = true;
                 }
             }
@@ -148,8 +148,8 @@ public class SofaFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/sofa6.obj";
-                    png_file = "models/table_texture6.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/sofa4.obj?alt=media&token=7180292d-ba6c-404d-bad0-35187f6d16ba";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture6.png?alt=media&token=4484f727-9186-46e9-979e-3b23918b1119";
                     isObjectReplaced = true;
                 }
             }

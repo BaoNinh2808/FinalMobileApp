@@ -2,8 +2,8 @@ package com.example.mobileappfinal.GUI_layer.Categories;
 
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.cnt;
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.isObjectReplaced;
-import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.obj_file;
-import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.png_file;
+import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.obj_url;
+import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.png_url;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -90,8 +90,8 @@ public class BedFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/bed1.obj";
-                    png_file = "models/bed_texture3.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed1.obj?alt=media&token=306f9129-061b-40a9-bf2f-0341e8a02e28";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed_texture3.png?alt=media&token=406a003f-bac4-4e0e-92cb-72bbc791e920";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -103,8 +103,8 @@ public class BedFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/bed2.obj";
-                    png_file = "models/table_texture4.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed2.obj?alt=media&token=31393109-0840-4019-8cd6-8838e6643ddd";
+                    png_url = "models/table_texture4.png";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -116,8 +116,8 @@ public class BedFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/bed3.obj";
-                    png_file = "models/bed_texture3.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed3.obj?alt=media&token=4df8f545-5fa7-45c2-bfdc-3410a9dc86c7";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed_texture3.png?alt=media&token=406a003f-bac4-4e0e-92cb-72bbc791e920";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -129,8 +129,8 @@ public class BedFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/bed4.obj";
-                    png_file = "models/bed_texture5.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed4.obj?alt=media&token=aac4f370-8b9c-4222-93c1-afdc5b63a4a2";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed_texture5.png?alt=media&token=6219f056-eda6-4286-8ce0-3b8455ac0165";
                     isObjectReplaced = true;
                 }
             }
@@ -140,8 +140,8 @@ public class BedFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/bed1.obj";
-                    png_file = "models/bed_texture1.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed1.obj?alt=media&token=306f9129-061b-40a9-bf2f-0341e8a02e28";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed_texture1.png?alt=media&token=5abc06df-f95d-4dbc-a6ea-e6524de703a0";
                     isObjectReplaced = true;
                 }
             }
@@ -151,8 +151,8 @@ public class BedFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/bed2.obj";
-                    png_file = "models/table_texture2.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed2.obj?alt=media&token=31393109-0840-4019-8cd6-8838e6643ddd";
+                    png_url = "models/table_texture2.png";
                     isObjectReplaced = true;
                 }
             }

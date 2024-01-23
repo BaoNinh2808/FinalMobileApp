@@ -20,11 +20,14 @@ import android.graphics.BitmapFactory;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
 import android.opengl.Matrix;
+import android.util.Log;
 
 import com.example.mobileappfinal.Business_layer.common.helpers.GlobalClass;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
@@ -134,22 +137,41 @@ public class ObjectRenderer {
   private float[] uvTransform = null;
   private int depthTextureId;
 
-  /**
-   * Creates and initializes OpenGL resources needed for rendering the model.
-   *
-   * @param context Context for loading the shader and below-named model and texture assets.
-   * @param objAssetName Name of the OBJ file containing the model geometry.
-   * @param diffuseTextureAssetName Name of the PNG file containing the diffuse texture map.
-   */
-  public void createOnGlThread(Context context, String objAssetName, String diffuseTextureAssetName)
+
+  private Bitmap downloadBitmapFromUrl(String url) throws IOException {
+    HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+    try {
+      InputStream inputStream = connection.getInputStream();
+      Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+      return bitmap;
+    } finally {
+      connection.disconnect();
+    }
+  }
+
+  private Obj downloadObjFromUrl(String url) throws IOException {
+    HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+    try {
+      InputStream inputStream = connection.getInputStream();
+      return ObjReader.read(inputStream);
+    } finally {
+      connection.disconnect();
+    }
+  }
+
+  public void createOnGlThread(Context context, String objUrl, String diffuseTextureAssetUrl)
       throws IOException {
     // Compiles and loads the shader based on the current configuration.
     compileAndLoadShaderProgram(context);
 
     // Read the texture.
-    Bitmap textureBitmap =
-        BitmapFactory.decodeStream(context.getAssets().open(diffuseTextureAssetName));
+//    Bitmap textureBitmap =
+//        BitmapFactory.decodeStream(context.getAssets().open(diffuseTextureAssetName));
 
+    Bitmap textureBitmap = downloadBitmapFromUrl(diffuseTextureAssetUrl);
+    if (textureBitmap == null) {
+      throw new IOException("Texture file is empty or cannot be found");
+    }
     GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
     GLES20.glGenTextures(textures.length, textures, 0);
     GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, textures[0]);
@@ -166,8 +188,10 @@ public class ObjectRenderer {
     ShaderUtil.checkGLError(TAG, "Texture loading");
 
     // Read the obj file.
-    InputStream objInputStream = context.getAssets().open(objAssetName);
-    Obj obj = ObjReader.read(objInputStream);
+//    InputStream objInputStream = context.getAssets().open(objAssetName);
+//    Obj obj = ObjReader.read(objInputStream);
+
+    Obj obj = downloadObjFromUrl(objUrl);
 
     // Prepare the Obj so that its structure is suitable for
     // rendering with OpenGL:

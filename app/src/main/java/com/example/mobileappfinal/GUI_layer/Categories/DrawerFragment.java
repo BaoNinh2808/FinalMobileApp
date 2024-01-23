@@ -2,8 +2,8 @@ package com.example.mobileappfinal.GUI_layer.Categories;
 
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.cnt;
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.isObjectReplaced;
-import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.obj_file;
-import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.png_file;
+import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.obj_url;
+import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.png_url;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -82,8 +82,8 @@ public class DrawerFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/storage1.obj";
-                    png_file = "models/table_texture5.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/storage1.obj?alt=media&token=f64082eb-a85f-43dc-9f76-f08b2931bbcf";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture5.png?alt=media&token=3fdc7c7f-c55f-4467-bd20-e668c8144cce";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -95,8 +95,8 @@ public class DrawerFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/storage2.obj";
-                    png_file = "models/table_texture5.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/storage2.obj?alt=media&token=6fb3909b-f59c-44b5-8365-e5c00848855a";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture5.png?alt=media&token=3fdc7c7f-c55f-4467-bd20-e668c8144cce";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -108,8 +108,8 @@ public class DrawerFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/storage3.obj";
-                    png_file = "models/bed_texture1.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/storage3.obj?alt=media&token=3c15fcec-6a05-4f24-995e-fd48ad37ff78";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed_texture1.png?alt=media&token=5abc06df-f95d-4dbc-a6ea-e6524de703a0";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -122,8 +122,8 @@ public class DrawerFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/storage1.obj";
-                    png_file = "models/table_texture5.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/storage1.obj?alt=media&token=f64082eb-a85f-43dc-9f76-f08b2931bbcf";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture5.png?alt=media&token=3fdc7c7f-c55f-4467-bd20-e668c8144cce";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -135,8 +135,8 @@ public class DrawerFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/storage2.obj";
-                    png_file = "models/table_texture5.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/storage2.obj?alt=media&token=6fb3909b-f59c-44b5-8365-e5c00848855a";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture5.png?alt=media&token=3fdc7c7f-c55f-4467-bd20-e668c8144cce";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -148,8 +148,8 @@ public class DrawerFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/storage3.obj";
-                    png_file = "models/bed_texture1.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/storage3.obj?alt=media&token=3c15fcec-6a05-4f24-995e-fd48ad37ff78";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed_texture1.png?alt=media&token=5abc06df-f95d-4dbc-a6ea-e6524de703a0";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }

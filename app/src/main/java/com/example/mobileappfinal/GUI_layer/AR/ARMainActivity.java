@@ -147,8 +147,8 @@ public class ARMainActivity extends AppCompatActivity implements GLSurfaceView.R
 
     //컨텍스트
     //변수 obj png
-    public static String obj_file = "";
-    public static String png_file = "";
+    public static String obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed1.obj?alt=media&token=306f9129-061b-40a9-bf2f-0341e8a02e28";
+    public static String png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/bed_texture5.png?alt=media&token=ab76c03f-590c-459d-8e27-32a965f40576";
     //파일 카운터
     public static int cnt = 0;
     public static boolean isObjectReplaced;
@@ -307,7 +307,7 @@ public class ARMainActivity extends AppCompatActivity implements GLSurfaceView.R
             planeRenderer.createOnGlThread(/*context=*/ this, "models/trigrid.png");//바닥 이미지
             pointCloudRenderer.createOnGlThread(/*context=*/ this);
             // 3D obj 파일 변경 및 texture 파일 변경
-            virtualObject.createOnGlThread(/*context=*/ this, obj_file, png_file);//obj & texture파일
+            virtualObject.createOnGlThread(/*context=*/ this, obj_url, png_url);//obj & texture파일
             virtualObject.setBlendMode(BlendMode.AlphaBlending);
             virtualObject.setDepthTexture(
                     depthTexture.getTextureId(), depthTexture.getWidth(), depthTexture.getHeight());
@@ -438,7 +438,7 @@ public class ARMainActivity extends AppCompatActivity implements GLSurfaceView.R
         if (isObjectReplaced) {
             isObjectReplaced = false;
             try {
-                virtualObject.createOnGlThread(this, obj_file, png_file);
+                virtualObject.createOnGlThread(this, obj_url, png_url);
                 virtualObject.setBlendMode(BlendMode.AlphaBlending);
                 virtualObject.setDepthTexture(
                         depthTexture.getTextureId(), depthTexture.getWidth(), depthTexture.getHeight());//Depth Settings(depth 적용)

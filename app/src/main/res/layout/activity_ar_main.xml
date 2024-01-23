@@ -1,5 +1,6 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -24,7 +25,8 @@
         android:background="@color/transparent"
         android:onClick="finish"
         android:scaleType="fitCenter"
-        android:src="@drawable/back_button"/>
+        android:src="@drawable/back_button"
+        app:tint="@color/black" />
 
     <ImageButton
         android:id="@+id/delete_button"
@@ -37,7 +39,8 @@
         android:background="@color/transparent"
         android:onClick="deleteMethod"
         android:scaleType="fitCenter"
-        android:src="@drawable/delete_icon"/>
+        android:src="@drawable/delete_icon"
+        app:tint = "@color/colorPrimary"/>
 
     <ImageButton
         android:id="@+id/plane_check_button"
@@ -51,7 +54,8 @@
         android:background="@color/transparent"
         android:onClick="plane_check_Method"
         android:scaleType="fitCenter"
-        android:src="@drawable/menu_plane_check" />
+        android:src="@drawable/menu_plane_check"
+        app:tint = "@color/colorPrimary"/>
 
     <ImageButton
         android:id="@+id/cap_button"
@@ -65,7 +69,8 @@
         android:background="@color/transparent"
         android:onClick="captureMethod"
         android:scaleType="fitCenter"
-        android:src="@drawable/capture_icon"/>
+        android:src="@drawable/capture_icon"
+        app:tint = "@color/colorPrimary"/>
 
     <ImageButton
         android:id="@+id/settings_button"
@@ -77,7 +82,8 @@
         android:layout_marginEnd="5dp"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_settings"
-        tools:ignore="RtlCompat"/>
+        tools:ignore="RtlCompat"
+        app:tint = "@color/colorPrimary"/>
 
 
     <SlidingDrawer

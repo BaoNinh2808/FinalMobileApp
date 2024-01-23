@@ -2,8 +2,8 @@ package com.example.mobileappfinal.GUI_layer.Categories;
 
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.cnt;
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.isObjectReplaced;
-import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.obj_file;
-import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.png_file;
+import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.obj_url;
+import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.png_url;
 
 import android.os.Bundle;
 
@@ -20,8 +20,8 @@ import com.example.mobileappfinal.R;
 
 //import static com.google.ar.core.examples.java.helloar.MainActivity.cnt;
 //import static com.google.ar.core.examples.java.helloar.MainActivity.isObjectReplaced;
-//import static com.google.ar.core.examples.java.helloar.MainActivity.obj_file;
-//import static com.google.ar.core.examples.java.helloar.MainActivity.png_file;
+//import static com.google.ar.core.examples.java.helloar.MainActivity.obj_url;
+//import static com.google.ar.core.examples.java.helloar.MainActivity.png_url;
 
 public class ChairFragment extends Fragment {
 
@@ -93,8 +93,8 @@ public class ChairFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/chair1.obj";
-                    png_file = "models/table_texture5.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/chair1.obj?alt=media&token=47241e7e-7de2-4717-96ba-045962c8077b";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture5.png?alt=media&token=3fdc7c7f-c55f-4467-bd20-e668c8144cce";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -106,8 +106,8 @@ public class ChairFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/chair2.obj";
-                    png_file = "models/table_texture4.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/chair2.obj?alt=media&token=3562035b-bc97-4f53-b92a-23564e0172d4";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture4.png?alt=media&token=0a68da70-a582-4470-bb3e-174bc80db289";
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -119,8 +119,8 @@ public class ChairFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/chair3.obj";
-                    png_file = "models/table_texture5.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/chair3.obj?alt=media&token=4e5fa2cf-5cc7-4c60-881e-2bb01e86f579";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture5.png?alt=media&token=3fdc7c7f-c55f-4467-bd20-e668c8144cce";
 ////                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -132,8 +132,8 @@ public class ChairFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/chair4.obj";
-                    png_file = "models/table_texture5.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/chair4.obj?alt=media&token=6934cce2-b91e-4796-9bc2-83eefb037368";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture5.png?alt=media&token=3fdc7c7f-c55f-4467-bd20-e668c8144cce";
                     isObjectReplaced = true;
                 }
             }
@@ -143,8 +143,8 @@ public class ChairFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/chair2.obj";
-                    png_file = "models/table_texture5.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/chair2.obj?alt=media&token=3562035b-bc97-4f53-b92a-23564e0172d4";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture5.png?alt=media&token=3fdc7c7f-c55f-4467-bd20-e668c8144cce";
                     isObjectReplaced = true;
                 }
             }
@@ -154,8 +154,8 @@ public class ChairFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/chair2.obj";
-                    png_file = "models/table_texture4.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/chair2.obj?alt=media&token=3562035b-bc97-4f53-b92a-23564e0172d4";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture4.png?alt=media&token=0a68da70-a582-4470-bb3e-174bc80db289";
                     isObjectReplaced = true;
                 }
             }

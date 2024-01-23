@@ -2,8 +2,8 @@ package com.example.mobileappfinal.GUI_layer.Categories;
 
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.cnt;
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.isObjectReplaced;
-import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.obj_file;
-import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.png_file;
+import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.obj_url;
+import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.png_url;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -83,8 +83,8 @@ public class DeskFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/desk1.obj";
-                    png_file = "models/table_texture6.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/desk2.obj?alt=media&token=d4d5c4ff-4622-4eb0-b6fd-ba560bff485d";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture6.png?alt=media&token=4484f727-9186-46e9-979e-3b23918b1119";
                     isObjectReplaced = true;
                 }
             }
@@ -94,8 +94,8 @@ public class DeskFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/desk2.obj";
-                    png_file = "models/table_texture5.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/desk1.obj?alt=media&token=30a9dd05-e2f3-4888-9a22-064b3239b205";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture5.png?alt=media&token=3fdc7c7f-c55f-4467-bd20-e668c8144cce";
                     isObjectReplaced = true;
                 }
             }
@@ -106,8 +106,8 @@ public class DeskFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/desk1.obj";
-                    png_file = "models/table_texture4.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/desk2.obj?alt=media&token=d4d5c4ff-4622-4eb0-b6fd-ba560bff485d";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture4.png?alt=media&token=0a68da70-a582-4470-bb3e-174bc80db289";
                     isObjectReplaced = true;
                 }
             }
@@ -117,8 +117,8 @@ public class DeskFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/desk2.obj";
-                    png_file = "models/table_texture4.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/desk1.obj?alt=media&token=30a9dd05-e2f3-4888-9a22-064b3239b205";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture4.png?alt=media&token=0a68da70-a582-4470-bb3e-174bc80db289";
                     isObjectReplaced = true;
                 }
             }
@@ -129,8 +129,8 @@ public class DeskFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/desk1.obj";
-                    png_file = "models/table_texture5.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/desk2.obj?alt=media&token=d4d5c4ff-4622-4eb0-b6fd-ba560bff485d";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture5.png?alt=media&token=3fdc7c7f-c55f-4467-bd20-e668c8144cce";
                     isObjectReplaced = true;
                 }
             }
@@ -140,8 +140,8 @@ public class DeskFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {
-                    obj_file = "models/desk2.obj";
-                    png_file = "models/table_texture6.png";
+                    obj_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/desk1.obj?alt=media&token=30a9dd05-e2f3-4888-9a22-064b3239b205";
+                    png_url = "https://firebasestorage.googleapis.com/v0/b/mobileappfinal-5d7c6.appspot.com/o/table_texture6.png?alt=media&token=4484f727-9186-46e9-979e-3b23918b1119";
                     isObjectReplaced = true;
                 }
             }
