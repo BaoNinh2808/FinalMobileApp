@@ -36,7 +36,9 @@ public class CartActivity extends AppCompatActivity {
         cartDatabase.getCartItemListLiveData().observe(this, new Observer<List<CartItem>>() {
             @Override
             public void onChanged(List<CartItem> cartItems) {
-                Log.d("TESTTEST", String.valueOf(cartItems.size()));
+
+
+
                 setCartItemList(cartItems);
             }
         });

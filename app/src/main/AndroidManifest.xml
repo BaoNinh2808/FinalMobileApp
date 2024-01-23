@@ -24,11 +24,7 @@
         <activity
             android:name=".GUI_layer.Home.HomeActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".GUI_layer.SignIn.SignInActivity"
@@ -38,6 +34,12 @@
 
         <activity android:name=".GUI_layer.SignUp.SignUpActivity"
             android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity android:name=".GUI_layer.Cart.CartActivity"

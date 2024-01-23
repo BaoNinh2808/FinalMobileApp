@@ -24,7 +24,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     private List<CartItem> cartItemList;
 
     private ProductListManager productListManager;
-    private FirebaseAuth mAuth;
     private Context context;
 
     public CartAdapter(Context context, List<CartItem> cartItemList) {
@@ -32,7 +31,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         this.cartItemList = cartItemList;
 
         productListManager = new ProductListManager();
-        mAuth = FirebaseAuth.getInstance();
     }
 
     @NonNull

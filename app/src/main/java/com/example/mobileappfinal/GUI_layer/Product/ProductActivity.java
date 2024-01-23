@@ -16,12 +16,17 @@ import android.widget.TextView;
 
 import com.example.mobileappfinal.Business_layer.Product.ProductListManager;
 import com.example.mobileappfinal.Business_layer.Product.SpecifyProductManager;
+import com.example.mobileappfinal.DTO.Favorite;
 import com.example.mobileappfinal.DTO.Product;
+import com.example.mobileappfinal.Data_layer.Cart.FavoriteDatabase;
 import com.example.mobileappfinal.GUI_layer.Home.ProductAdapter;
 import com.example.mobileappfinal.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 public class ProductActivity extends AppCompatActivity {
@@ -32,6 +37,10 @@ public class ProductActivity extends AppCompatActivity {
 
     private Product currentProduct;
 
+    private FavoriteDatabase favoriteDatabase;
+
+    private FirebaseAuth mAuth;
+
     private ProductListManager productListManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +49,9 @@ public class ProductActivity extends AppCompatActivity {
 
         specifyProductManager = new SpecifyProductManager();
         productListManager = new ProductListManager();
+
+        favoriteDatabase = new FavoriteDatabase();
+        mAuth = FirebaseAuth.getInstance();
 
         recyclerViewSimilarProducts = findViewById(R.id.recyclerViewSimilarProducts);
 
@@ -114,27 +126,34 @@ public class ProductActivity extends AppCompatActivity {
         cartFragment.show(getSupportFragmentManager(), cartFragment.getTag());
     }
 
-    private void handleFavouriteButton() {
-        ImageView imageViewFavorite = findViewById(R.id.imageViewFavorite);
+        private void handleFavouriteButton() {
+            ImageView imageViewFavorite = findViewById(R.id.imageViewFavorite);
 
-//        TODO: Nho lay tu firebase
+            final boolean[] isFavorite = {false}; // Using an array to make it effectively final
 
-        final boolean[] isFavorite = {false}; // Using an array to make it effectively final
+            imageViewFavorite.setOnClickListener(v -> {
+                if (isFavorite[0]) {
+                    // Remove favorite (toggle off)
+                    imageViewFavorite.setImageDrawable(getResources().getDrawable(R.drawable.icon_favorite_border, null));
 
-        imageViewFavorite.setOnClickListener(v -> {
-            if (isFavorite[0]) {
-                // Remove favorite (toggle off)
-                imageViewFavorite.setImageDrawable(getResources().getDrawable(R.drawable.icon_favorite_border, null));
-            } else {
-                // Set favorite (toggle on)
-                imageViewFavorite.setImageDrawable(getResources().getDrawable(R.drawable.icon_favorite, null));
-            }
+                    favoriteDatabase.removeFavoriteItem(currentProduct.getId());
 
-            // Toggle the state
-            isFavorite[0] = !isFavorite[0];
-        });
+                } else {
+                    // Set favorite (toggle on)
+                    imageViewFavorite.setImageDrawable(getResources().getDrawable(R.drawable.icon_favorite, null));
 
-    }
+                    Map<String, Object> favoriteItem = new HashMap<>();
+                    favoriteItem.put("product_id", currentProduct.getId());
+                    favoriteItem.put("user_id", mAuth.getCurrentUser().getUid());
+
+                    favoriteDatabase.addFavoriteItem(favoriteItem);
+                }
+
+                // Toggle the state
+                isFavorite[0] = !isFavorite[0];
+            });
+
+        }
 
     private void handleBackButton() {
         ImageView imageViewBackProduct = findViewById(R.id.imageViewBackProduct);

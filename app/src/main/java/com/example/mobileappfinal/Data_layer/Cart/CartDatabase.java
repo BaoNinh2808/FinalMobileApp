@@ -11,6 +11,7 @@ import com.example.mobileappfinal.DTO.Product;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -23,12 +24,15 @@ import java.util.Map;
 public class CartDatabase {
     private FirebaseFirestore db;
 
+    private FirebaseAuth mAuth;
+
     private List<CartItem> cartItemList;
 
     private MutableLiveData<List<CartItem>> cartItemListLiveData = new MutableLiveData<>();
 
     public CartDatabase() {
         db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         cartItemList = new ArrayList<>();
     }
 
@@ -61,13 +65,14 @@ public class CartDatabase {
                         if (task.isSuccessful()) {
                             cartItemList.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                CartItem cartItem = new CartItem();
-                                cartItem.setId(document.getId());
-                                cartItem.setProduct_id(document.getString("product_id"));
-                                cartItem.setUser_id(document.getString("user_id"));
+                                if (mAuth.getCurrentUser().getUid().equals(document.getString("user_id"))){
+                                    CartItem cartItem = new CartItem();
+                                    cartItem.setId(document.getId());
+                                    cartItem.setProduct_id(document.getString("product_id"));
+                                    cartItem.setUser_id(document.getString("user_id"));
 
-
-                                cartItemList.add(cartItem);
+                                    cartItemList.add(cartItem);
+                                }
                             }
 
                             cartItemListLiveData.postValue(cartItemList);
