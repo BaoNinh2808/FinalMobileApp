@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,6 +30,8 @@ public class ProductActivity extends AppCompatActivity {
     private RecyclerView recyclerViewSimilarProducts;
     private ProductAdapter productAdapter;
 
+    private Product currentProduct;
+
     private ProductListManager productListManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +47,9 @@ public class ProductActivity extends AppCompatActivity {
         String productID = getIntent().getStringExtra("product_id");
 
         // get product from product name
-        Product product = productListManager.getProductById(productID);
-        initialView(product);
-        initialRecyclerViewSimilarProducts(recyclerViewSimilarProducts, product);
+        currentProduct = productListManager.getProductById(productID);
+        initialView(currentProduct);
+        initialRecyclerViewSimilarProducts(recyclerViewSimilarProducts, currentProduct);
         handleOnclick();
     }
 
@@ -85,11 +88,30 @@ public class ProductActivity extends AppCompatActivity {
 
     private void handleAddToCartButton() {
         //TODO: Cài đặt giỏ hàng
+
+
     }
 
     private void handleTestWithARButton() {
         //TODO: handle test with AR button
+        Button btnAddToCart = findViewById(R.id.btnAddToCart);
 
+        btnAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showBottomSheetDialog();
+            }
+        });
+    }
+
+    private void showBottomSheetDialog() {
+        Bundle bundle = new Bundle();
+        bundle.putString("product_id", currentProduct.getId());
+
+        CartBottomSheetFragment cartFragment = new CartBottomSheetFragment();
+        cartFragment.setArguments(bundle);
+
+        cartFragment.show(getSupportFragmentManager(), cartFragment.getTag());
     }
 
     private void handleFavouriteButton() {

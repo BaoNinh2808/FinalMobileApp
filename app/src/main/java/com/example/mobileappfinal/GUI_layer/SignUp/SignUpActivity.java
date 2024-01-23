@@ -108,7 +108,7 @@ public class SignUpActivity extends AppCompatActivity {
                                         Toast.makeText(SignUpActivity.this, "Account created",
                                                 Toast.LENGTH_SHORT).show();
 
-                                        AddUserToDataBase(user);
+//                                        AddUserToDataBase(user);
 
                                         Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
                                         startActivity(intent);

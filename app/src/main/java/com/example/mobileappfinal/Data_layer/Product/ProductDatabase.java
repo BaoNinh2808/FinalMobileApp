@@ -42,7 +42,7 @@ public class ProductDatabase {
     public void fetchProductList(){
         db = FirebaseFirestore.getInstance();
 
-        db.collection("product")
+        db.collection("product_database")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

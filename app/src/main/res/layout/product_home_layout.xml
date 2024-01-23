@@ -59,8 +59,9 @@
                     android:layout_width="0dp"
                     android:layout_height="20dp"
                     android:layout_weight="20"
-                    android:src="@drawable/ic_favorite_red_24dp"
-                    android:visibility="gone" />
+                    android:src="@drawable/selector_favourite_icon"
+                    android:visibility="gone"
+                    />
 
 
             </LinearLayout>
