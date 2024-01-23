@@ -101,4 +101,14 @@ public class ProductDatabase {
         return null;
     }
 
+    public List<Product> getProductByCategory(String category){
+        List<Product> products = new ArrayList<>();
+        for (Product product : productList){
+            if (product.getCategory().equals(category)){
+                products.add(product);
+            }
+        }
+        return products;
+    }
+
 }
