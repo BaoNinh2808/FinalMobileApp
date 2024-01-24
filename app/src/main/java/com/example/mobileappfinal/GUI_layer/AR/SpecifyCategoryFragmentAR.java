@@ -1,4 +1,4 @@
-package com.example.mobileappfinal.GUI_layer.Categories;
+package com.example.mobileappfinal.GUI_layer.AR;
 
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.cnt;
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.isObjectReplaced;
@@ -24,7 +24,8 @@ import com.example.mobileappfinal.Business_layer.Object3D.Object3DListManager;
 import com.example.mobileappfinal.DTO.Object3D;
 import com.example.mobileappfinal.DTO.Product;
 import com.example.mobileappfinal.Data_layer.Product.ProductDatabase;
-import com.example.mobileappfinal.GUI_layer.AR.CategoriesARFragment;
+import com.example.mobileappfinal.GUI_layer.Categories.CategoriesFragment;
+import com.example.mobileappfinal.GUI_layer.Categories.CategoryAdapter;
 import com.example.mobileappfinal.GUI_layer.Product.ProductActivity;
 import com.example.mobileappfinal.R;
 
@@ -33,19 +34,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SpecifyCategoryFragment extends Fragment {
+public class SpecifyCategoryFragmentAR extends Fragment {
     private static final String CATEGORY = "Bed";
 
     private ImageButton back_button;
     private RecyclerView recyclerView;
     private CategoryAdapter categoryAdapter;
 
-    public SpecifyCategoryFragment() {
+    public SpecifyCategoryFragmentAR() {
         // Required empty public constructor
     }
 
-    public static SpecifyCategoryFragment newInstance(String category, String isCallByAR) {
-        SpecifyCategoryFragment fragment = new SpecifyCategoryFragment();
+    public static SpecifyCategoryFragmentAR newInstance(String category, String isCallByAR) {
+        SpecifyCategoryFragmentAR fragment = new SpecifyCategoryFragmentAR();
         Bundle args = new Bundle();
         args.putString(CATEGORY, category);
         args.putString("isCallByAR", isCallByAR);
@@ -53,8 +54,8 @@ public class SpecifyCategoryFragment extends Fragment {
         return fragment;
     }
 
-    public static SpecifyCategoryFragment newInstance() {
-        return new SpecifyCategoryFragment();
+    public static SpecifyCategoryFragmentAR newInstance() {
+        return new SpecifyCategoryFragmentAR();
     }
 
     @Override
@@ -67,25 +68,16 @@ public class SpecifyCategoryFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         Bundle args = getArguments();
-        String isCallByAR = "false";
-        if (args != null) {
-            isCallByAR = args.getString("isCallByAR", "false"); // Replace with your actual data
-        }
 
         // Inflate the layout for this fragment
-        ViewGroup v = (ViewGroup) inflater.inflate(R.layout.fragment_specify_category, container, false);
+        ViewGroup v = (ViewGroup) inflater.inflate(R.layout.fragment_specify_category_ar, container, false);
         back_button = (ImageButton)v.findViewById(R.id.back_button1);
-        String finalIsCallByAR = isCallByAR;
         back_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                if (finalIsCallByAR.equals("true"))
-                    fragmentTransaction.replace(R.id.fragment_place, new CategoriesARFragment());
-                else {
-                    fragmentTransaction.replace(R.id.fragment_place, new CategoriesFragment());
-                }
+                fragmentTransaction.replace(R.id.fragment_place, new CategoriesARFragment());
                 fragmentTransaction.commit();
             }
         });
@@ -108,19 +100,12 @@ public class SpecifyCategoryFragment extends Fragment {
         categoryAdapter.setOnItemClickListener(new CategoryAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Product product) {
-                if (finalIsCallByAR.equals("true")) {
-                    if (cnt == 0) {
-                        obj_url = map.get(product.getId()).get(0);
-                        png_url = map.get(product.getId()).get(1);
-                        isObjectReplaced = true;
-                        //Show toast message
-                        Toast.makeText(getActivity().getApplicationContext(), "Replace Object", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                else{
-                    Intent intent = new Intent(getActivity(), ProductActivity.class);
-                    intent.putExtra("product_id", product.getId());
-                    startActivity(intent);
+                if (cnt == 0) {
+                    obj_url = map.get(product.getId()).get(0);
+                    png_url = map.get(product.getId()).get(1);
+                    isObjectReplaced = true;
+                    //Show toast message
+                    Toast.makeText(getActivity().getApplicationContext(), "Replace Object", Toast.LENGTH_SHORT).show();
                 }
             }
         });

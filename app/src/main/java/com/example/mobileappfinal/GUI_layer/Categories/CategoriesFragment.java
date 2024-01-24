@@ -48,7 +48,7 @@ public class CategoriesFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                 // Create a new instance of your BedFragment
-                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Bed");
+                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Bed", "false");
 
                 fragmentTransaction.replace(R.id.fragment_place, specifyCategoryFragment);
                 fragmentTransaction.commit();
@@ -63,7 +63,7 @@ public class CategoriesFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                 // Create a new instance of your BedFragment
-                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Drawer");
+                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Drawer", "false");
 
                 fragmentTransaction.replace(R.id.fragment_place, specifyCategoryFragment);
                 fragmentTransaction.commit();
@@ -78,7 +78,7 @@ public class CategoriesFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                 // Create a new instance of your BedFragment
-                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Desk");
+                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Desk", "false");
 
                 fragmentTransaction.replace(R.id.fragment_place, specifyCategoryFragment);
                 fragmentTransaction.commit();
@@ -93,7 +93,7 @@ public class CategoriesFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                 // Create a new instance of your BedFragment
-                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Chair");
+                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Chair", "false");
 
                 fragmentTransaction.replace(R.id.fragment_place, specifyCategoryFragment);
                 fragmentTransaction.commit();
@@ -108,7 +108,7 @@ public class CategoriesFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                 // Create a new instance of your BedFragment
-                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Sofa");
+                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Sofa","false");
 
                 fragmentTransaction.replace(R.id.fragment_place, specifyCategoryFragment);
                 fragmentTransaction.commit();
@@ -123,7 +123,7 @@ public class CategoriesFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                 // Create a new instance of your BedFragment
-                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Table");
+                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Table", "false");
 
                 fragmentTransaction.replace(R.id.fragment_place, specifyCategoryFragment);
                 fragmentTransaction.commit();

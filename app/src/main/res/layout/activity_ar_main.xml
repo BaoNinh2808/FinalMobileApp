@@ -122,7 +122,7 @@
             android:background="@drawable/login_box"
             android:orientation="vertical">
 
-            <include layout="@layout/activity_categories" />
+            <include layout="@layout/layout_categories_ar" />
         </LinearLayout>
     </SlidingDrawer>
 

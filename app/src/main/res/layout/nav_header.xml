@@ -25,7 +25,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="5dp"
-        android:src="@drawable/ic_cactus" />
+        android:src="@drawable/user" />
 
     <!-- TextView for user name -->
     <TextView
