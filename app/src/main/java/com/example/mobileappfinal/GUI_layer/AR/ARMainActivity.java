@@ -38,6 +38,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobileappfinal.Business_layer.Object3D.Object3DListManager;
+import com.example.mobileappfinal.DTO.Object3D;
+import com.example.mobileappfinal.Data_layer.Product.ProductDatabase;
 import com.example.mobileappfinal.R;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.ArCoreApk;
@@ -160,6 +163,15 @@ public class ARMainActivity extends AppCompatActivity implements GLSurfaceView.R
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ar_main);
+
+        //get Extra from intent
+        String product_id = getIntent().getStringExtra("product_id");
+        Object3DListManager object3DListManager = new Object3DListManager();
+        Object3D object3D = object3DListManager.getObject3DById(product_id);
+
+        obj_url = object3D.getObjUrl();
+        png_url = object3D.getTextureUrl();
+
         //region ...생략....
         surfaceView = findViewById(R.id.surfaceview);
         displayRotationHelper = new DisplayRotationHelper(/*context=*/ this);

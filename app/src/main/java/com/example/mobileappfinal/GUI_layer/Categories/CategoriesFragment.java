@@ -20,36 +20,10 @@ import com.example.mobileappfinal.R;
  */
 public class CategoriesFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     public CategoriesFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MainFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CategoriesFragment newInstance(String param1, String param2) {
-        CategoriesFragment fragment = new CategoriesFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     public static CategoriesFragment newInstance() {
         return new CategoriesFragment();
@@ -58,10 +32,6 @@ public class CategoriesFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -74,10 +44,13 @@ public class CategoriesFragment extends Fragment {
         btnShowView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//        replaceFragment(bedFragment);
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_place, new BedFragment());
+
+                // Create a new instance of your BedFragment
+                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Bed");
+
+                fragmentTransaction.replace(R.id.fragment_place, specifyCategoryFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -88,7 +61,11 @@ public class CategoriesFragment extends Fragment {
             public void onClick(View view) {
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_place, new DrawerFragment());
+
+                // Create a new instance of your BedFragment
+                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Drawer");
+
+                fragmentTransaction.replace(R.id.fragment_place, specifyCategoryFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -99,7 +76,11 @@ public class CategoriesFragment extends Fragment {
             public void onClick(View view) {
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_place, new DeskFragment());
+
+                // Create a new instance of your BedFragment
+                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Desk");
+
+                fragmentTransaction.replace(R.id.fragment_place, specifyCategoryFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -110,7 +91,11 @@ public class CategoriesFragment extends Fragment {
             public void onClick(View view) {
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_place, new ChairFragment());
+
+                // Create a new instance of your BedFragment
+                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Chair");
+
+                fragmentTransaction.replace(R.id.fragment_place, specifyCategoryFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -121,7 +106,11 @@ public class CategoriesFragment extends Fragment {
             public void onClick(View view) {
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_place, new SofaFragment());
+
+                // Create a new instance of your BedFragment
+                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Sofa");
+
+                fragmentTransaction.replace(R.id.fragment_place, specifyCategoryFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -132,21 +121,14 @@ public class CategoriesFragment extends Fragment {
             public void onClick(View view) {
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_place, new TableFragment());
+
+                // Create a new instance of your BedFragment
+                SpecifyCategoryFragment specifyCategoryFragment = SpecifyCategoryFragment.newInstance("Table");
+
+                fragmentTransaction.replace(R.id.fragment_place, specifyCategoryFragment);
                 fragmentTransaction.commit();
             }
         });
-
-//        ImageButton btnShowView7 = v.findViewById(R.id.menu_button);
-//        btnShowView7.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                fragmentTransaction.replace(R.id.fragment_place, new SidemenuFragment());
-//                fragmentTransaction.commit();
-//            }
-//        });
 
 
         return v;

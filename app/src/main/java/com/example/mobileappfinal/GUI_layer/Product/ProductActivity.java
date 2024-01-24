@@ -19,6 +19,7 @@ import com.example.mobileappfinal.Business_layer.Product.SpecifyProductManager;
 import com.example.mobileappfinal.DTO.Favorite;
 import com.example.mobileappfinal.DTO.Product;
 import com.example.mobileappfinal.Data_layer.Cart.FavoriteDatabase;
+import com.example.mobileappfinal.GUI_layer.AR.ARMainActivity;
 import com.example.mobileappfinal.GUI_layer.Home.ProductAdapter;
 import com.example.mobileappfinal.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -106,12 +107,23 @@ public class ProductActivity extends AppCompatActivity {
 
     private void handleTestWithARButton() {
         //TODO: handle test with AR button
-        Button btnAddToCart = findViewById(R.id.btnAddToCart);
+//        Button btnAddToCart = findViewById(R.id.btnAddToCart);
+//
+//        btnAddToCart.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                showBottomSheetDialog();
+//            }
+//        });
 
-        btnAddToCart.setOnClickListener(new View.OnClickListener() {
+        Button btnTestWithAR = findViewById(R.id.btnTestWithAR);
+
+        btnTestWithAR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showBottomSheetDialog();
+                Intent intent = new Intent(ProductActivity.this, ARMainActivity.class);
+                intent.putExtra("product_id", currentProduct.getId());
+                startActivity(intent);
             }
         });
     }
