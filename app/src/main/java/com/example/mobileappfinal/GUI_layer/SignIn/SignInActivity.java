@@ -53,15 +53,15 @@ public class SignInActivity extends AppCompatActivity {
         Object3DListManager object3DListManager = new Object3DListManager();   // để fetch data từ firebase về
 
         mAuth = FirebaseAuth.getInstance();
-
-        setAndGetAllWin();
-        setEventClickButtonSignIn();
-        setEventClickTextViewSignUp();
-        if (mAuth != null){
+        //how can I check if the user is already logged in?
+        if (mAuth.getCurrentUser() != null){
             Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
             startActivity(intent);
             finish();
         }
+        setAndGetAllWin();
+        setEventClickButtonSignIn();
+        setEventClickTextViewSignUp();
     }
 
     private void setEventClickTextViewSignUp() {
