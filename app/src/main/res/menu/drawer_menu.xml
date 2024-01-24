@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:title="Home"/>
+    <item
+        android:id="@+id/menu_user"
+        android:title="User Page"/>
+    <item
+        android:id="@+id/menu_category"
+        android:title="Category Page"/>
+    <item
+        android:id="@+id/menu_cart"
+        android:title="Cart Page"/>
+    <item
+        android:id="@+id/menu_logout"
+        android:title="Log out"/>
+</menu>

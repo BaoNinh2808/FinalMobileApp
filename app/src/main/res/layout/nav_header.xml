@@ -1,0 +1,42 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+<!--    Button for close drawer-->
+    <ImageView
+        android:id="@+id/closeDrawer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_menu_white"
+        app:tint="@color/white"
+        android:layout_gravity="end"
+        android:layout_marginEnd="20dp"/>
+
+    <!-- ImageView for user image -->
+    <ImageView
+        android:id="@+id/userImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_cactus" />
+
+    <!-- TextView for user name -->
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="John Doe"/>
+
+</LinearLayout>

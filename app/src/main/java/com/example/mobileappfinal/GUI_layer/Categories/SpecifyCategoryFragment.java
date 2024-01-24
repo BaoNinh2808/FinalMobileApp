@@ -5,6 +5,7 @@ import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.isObjectRep
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.obj_url;
 import static com.example.mobileappfinal.GUI_layer.AR.ARMainActivity.png_url;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import com.example.mobileappfinal.Business_layer.Object3D.Object3DListManager;
 import com.example.mobileappfinal.DTO.Object3D;
 import com.example.mobileappfinal.DTO.Product;
 import com.example.mobileappfinal.Data_layer.Product.ProductDatabase;
+import com.example.mobileappfinal.GUI_layer.Product.ProductActivity;
 import com.example.mobileappfinal.R;
 
 import java.util.Arrays;
@@ -60,6 +62,13 @@ public class SpecifyCategoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        Bundle args = getArguments();
+        String isCallByAR = "false";
+        if (args != null) {
+            isCallByAR = args.getString("isCallByAR", "false"); // Replace with your actual data
+        }
+
         // Inflate the layout for this fragment
         ViewGroup v = (ViewGroup) inflater.inflate(R.layout.fragment_specify_category, container, false);
         back_button = (ImageButton)v.findViewById(R.id.back_button1);
@@ -88,15 +97,21 @@ public class SpecifyCategoryFragment extends Fragment {
             map.put(product.getId(), Arrays.asList( object3D.getObjUrl(), object3D.getTextureUrl()));
         }
 
+        String finalIsCallByAR = isCallByAR;
         categoryAdapter.setOnItemClickListener(new CategoryAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Product product) {
-                if (cnt == 0) {
-                    obj_url = map.get(product.getId()).get(0);
-                    png_url = map.get(product.getId()).get(1);
-                    Log.d("obj_url", obj_url);
-                    Log.d("png_url", png_url);
-                    isObjectReplaced = true;
+                if (finalIsCallByAR.equals("true")) {
+                    if (cnt == 0) {
+                        obj_url = map.get(product.getId()).get(0);
+                        png_url = map.get(product.getId()).get(1);
+                        isObjectReplaced = true;
+                    }
+                }
+                else{
+                    Intent intent = new Intent(getActivity(), ProductActivity.class);
+                    intent.putExtra("product_id", product.getId());
+                    startActivity(intent);
                 }
             }
         });
