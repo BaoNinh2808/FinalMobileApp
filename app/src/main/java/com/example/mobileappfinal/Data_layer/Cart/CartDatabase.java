@@ -12,8 +12,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -55,6 +57,31 @@ public class CartDatabase {
                 });
     }
 
+    public void deleteCartItem(String productId) {
+        Log.d("DELETE_PRODUCT_ID", productId);
+        CollectionReference cartItemsRef = db.collection("cartItem");
+
+        Query query = cartItemsRef.whereEqualTo("product_id", productId);
+
+        query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        DocumentReference documentReference = document.getReference();
+                        documentReference.delete();
+                    }
+                } else {
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+            }
+        });
+    }
+
+
     public void fetchCartItemList(){
 
         db.collection("cartItem")
@@ -70,6 +97,12 @@ public class CartDatabase {
                                     cartItem.setId(document.getId());
                                     cartItem.setProduct_id(document.getString("product_id"));
                                     cartItem.setUser_id(document.getString("user_id"));
+
+                                    Long quantityLong = document.getLong("quantity");
+                                    if (quantityLong != null) {
+                                        int quantity = quantityLong.intValue();
+                                        cartItem.setQuantity(quantity);
+                                    }
 
                                     cartItemList.add(cartItem);
                                 }

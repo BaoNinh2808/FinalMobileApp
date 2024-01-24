@@ -44,13 +44,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setEventClickIconNav() {
-        iconNav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, UserActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
 
