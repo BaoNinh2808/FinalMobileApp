@@ -178,7 +178,8 @@ public class ProductActivity extends AppCompatActivity {
         //handle click on similar product of recycler view
         productAdapter.setOnItemClickListener(p -> {
             Intent intent = new Intent(this, ProductActivity.class);
-            intent.putExtra("name", p.getName());
+            intent.putExtra("product_id", p.getId());
+            Log.d("TAG", "initialRecyclerViewSimilarProducts: " + p.getName());
             startActivity(intent);
         });
         recyclerView.setAdapter(productAdapter);
