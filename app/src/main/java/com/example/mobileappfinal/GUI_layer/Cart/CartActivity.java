@@ -26,12 +26,14 @@ import com.example.mobileappfinal.Data_layer.Cart.CartDatabase;
 import com.example.mobileappfinal.Data_layer.Pay.PayDatabase;
 import com.example.mobileappfinal.GUI_layer.Categories.MainCategoriesActivity;
 import com.example.mobileappfinal.GUI_layer.Home.HomeActivity;
+import com.example.mobileappfinal.GUI_layer.Pay.PaymentActivity;
 import com.example.mobileappfinal.GUI_layer.SignIn.SignInActivity;
 import com.example.mobileappfinal.GUI_layer.User.UserActivity;
 import com.example.mobileappfinal.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
@@ -145,30 +147,7 @@ public class CartActivity extends AppCompatActivity {
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Build the alert dialog
-                AlertDialog.Builder builder = new AlertDialog.Builder(CartActivity.this);
-                builder.setTitle("Confirmation");
-                builder.setMessage("Are you sure you want to proceed with the payment?");
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // User clicked Yes, proceed with the payment
-                        performPayment();
-                        Intent intent = new Intent(CartActivity.this, HomeActivity.class);
-                        startActivity(intent);
-                    }
-                });
-                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // User clicked No, do nothing or handle accordingly
-                        dialog.dismiss();
-                    }
-                });
-
-                // Show the alert dialog
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
+                performPayment();
             }
         });
     }
@@ -178,6 +157,9 @@ public class CartActivity extends AppCompatActivity {
         LocalDate currentDate = LocalDate.now();
         Date date = java.sql.Date.valueOf(currentDate.toString());
 
+        List<Map<String, Object>> pays = new ArrayList<>();
+        List<String> product_ids = new ArrayList<>();
+
         for (CartItem selectedItem : selectedItems) {
             // Create a Pay object for each selected item
             Map<String, Object> pay = new HashMap<>();
@@ -186,10 +168,15 @@ public class CartActivity extends AppCompatActivity {
             pay.put("quantity", selectedItem.getQuantity());
             pay.put("date", date);
 
-            // Add the Pay object to the database
-            payDatabase.addPay(pay);
-            // Delete the corresponding CartItem
-            cartDatabase.deleteCartItem(selectedItem.getProduct_id());
+            pays.add(pay);
+            product_ids.add(selectedItem.getProduct_id());
+
+            Intent intent = new Intent(CartActivity.this, PaymentActivity.class);
+            intent.putExtra("pays", (Serializable) pays);
+            intent.putStringArrayListExtra("product_ids", new ArrayList<>(product_ids));
+
+            startActivity(intent);
+
         }
 
         // You can also update the UI or perform other actions after payment

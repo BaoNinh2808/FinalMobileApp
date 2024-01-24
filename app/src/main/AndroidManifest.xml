@@ -70,6 +70,10 @@
 
         <activity android:name = ".GUI_layer.Categories.MainCategoriesActivity"
             android:exported="true">
+        </activity>
+
+        <activity android:name=".GUI_layer.Pay.PaymentActivity"
+            android:exported="true">
 
         </activity>
         <!-- Indicates whether "Google Play Services for AR" (ARCore) is "required" or "optional". -->
