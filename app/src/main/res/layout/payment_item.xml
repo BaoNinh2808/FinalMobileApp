@@ -12,13 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:id="@+id/cbCartItem"
-            android:layout_gravity="center">
-        </CheckBox>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +27,7 @@
                     android:layout_height="120dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/producthome"
-                    android:id="@+id/ivProductCartItem">
+                    android:id="@+id/ivProductPaymentItem">
                 </ImageView>
 
                 <LinearLayout
@@ -47,7 +40,15 @@
                         android:layout_height="wrap_content"
                         android:text="NAME"
                         android:textSize="20dp"
-                        android:id="@+id/tvNameProductCartItem">
+                        android:id="@+id/tvNameProductPaymentItem">
+                    </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DATE"
+                        android:textSize="20dp"
+                        android:id="@+id/tvDateProductPaymentItem">
+
                     </TextView>
 
                     <View
@@ -68,48 +69,10 @@
                             android:text="PRICE"
                             android:textSize="25dp"
                             android:textStyle="bold"
-                            android:id="@+id/tvPriceProductCartItem"
-                            android:layout_marginRight="20dp"
+                            android:id="@+id/tvPriceProductPaymentItem"
                             >
                         </TextView>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
-                            <ImageView
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
-                                android:src="@drawable/minus_icon"
-                                android:layout_weight="1"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="20dp"
-                                android:id="@+id/minusQuantityButtonCart">
-                            </ImageView>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="1"
-                                android:textSize="25dp"
-                                android:textStyle="bold"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:id="@+id/tvQuantityCart">
-                            </TextView>
-
-                            <ImageView
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
-                                android:src="@drawable/plus_icon"
-                                android:layout_weight="1"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="20dp"
-                                android:id="@+id/plusQuantityButtonCart">
-
-                            </ImageView>
-
-                        </LinearLayout>
 
                     </LinearLayout>
 

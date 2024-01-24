@@ -109,19 +109,6 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    private void setEventClickIconNav() {
-        iconNav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                    drawerLayout.closeDrawer(GravityCompat.START);
-                } else {
-                    drawerLayout.openDrawer(GravityCompat.START);
-                }
-            }
-        });
-    }
-
 
     private void setEventClickButtonCart() {
         cartLogo.setOnClickListener(new View.OnClickListener() {

@@ -56,7 +56,7 @@ public class ProductDatabase {
                                 Product tempProduct = new Product();
                                 tempProduct.setId(document.getId());
                                 tempProduct.setName(document.getString("name"));
-                                tempProduct.setPrice(document.getString("price"));
+                                tempProduct.setPrice(document.getString("price") + "$");
                                 tempProduct.setImageUrl(document.getString("imageUrl"));
                                 tempProduct.setCategory(document.getString("category"));
                                 tempProduct.setHot(document.getBoolean("isHot"));

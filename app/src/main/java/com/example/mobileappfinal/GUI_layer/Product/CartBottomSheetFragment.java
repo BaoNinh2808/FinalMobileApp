@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +20,7 @@ import com.example.mobileappfinal.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +28,11 @@ import java.util.Map;
 public class CartBottomSheetFragment extends BottomSheetDialogFragment {
 
     private Button btnNavToCardActivity;
+
+    private ImageView productImage;
+    private TextView productPrice, productName, productQuantity;
+
+    private ImageView btnMinus, btnPlus;
     private Product currentProduct;
     private String currentProductID;
     private ProductListManager productListManager;
@@ -42,8 +50,37 @@ public class CartBottomSheetFragment extends BottomSheetDialogFragment {
         setCurrentProduct();
         setAndGetAllView(view);
         setEventClickButtonAdd();
+        setEventMinusQuantity();
+        setEventPlusQuantity();
 
         return view;
+    }
+
+    private void setEventPlusQuantity() {
+        btnPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int prodQuantity = Integer.valueOf(productQuantity.getText().toString());
+                prodQuantity = prodQuantity + 1;
+
+                productQuantity.setText(String.valueOf(prodQuantity));
+            }
+        });
+    }
+
+    private void setEventMinusQuantity() {
+        btnMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int prodQuantity = Integer.valueOf(productQuantity.getText().toString());
+
+                if (prodQuantity > 1) {
+                    prodQuantity = prodQuantity - 1;
+                }
+
+                productQuantity.setText(String.valueOf(prodQuantity));
+            }
+        });
     }
 
     private void setEventClickButtonAdd() {
@@ -61,17 +98,18 @@ public class CartBottomSheetFragment extends BottomSheetDialogFragment {
     }
 
     private void addCartItemToDB() {
-//        TODO: set số lượng sản phẩm
         CartDatabase cartDatabase = new CartDatabase();
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         String user_id = currentUser.getUid();
 
+        int quantity = Integer.valueOf(productQuantity.getText().toString());
+
 
         Map<String, Object> cartItem = new HashMap<>();
         cartItem.put("product_id", currentProductID);
         cartItem.put("user_id", user_id);
-        cartItem.put("quantity", 1);
+        cartItem.put("quantity", quantity);
 
         cartDatabase.addCartItem(cartItem);
 
@@ -79,7 +117,16 @@ public class CartBottomSheetFragment extends BottomSheetDialogFragment {
 
     private void setAndGetAllView(View view) {
         btnNavToCardActivity = view.findViewById(R.id.btnAddAndNavCart);
+        productImage = view.findViewById(R.id.ivProductCart);
+        productPrice = view.findViewById(R.id.tvPriceProductCart);
+        productName = view.findViewById(R.id.tvNameProductCart);
+        productQuantity = view.findViewById(R.id.tvQuantity);
+        btnMinus = view.findViewById(R.id.minusQuantityButton);
+        btnPlus = view.findViewById(R.id.plusQuantityButton);
 
+        Picasso.get().load(currentProduct.getImageUrl()).into(productImage);
+        productPrice.setText(currentProduct.getPrice());
+        productName.setText(currentProduct.getName());
 
     }
 
