@@ -52,9 +52,18 @@ public class HomeActivity extends AppCompatActivity {
 
         setAndGetAllView();
         menuNavigation();
+        setNavIconClick();
         observeProductList();
         setEventClickButtonCart();
-        setEventClickIconNav();
+    }
+
+    private void setNavIconClick() {
+        iconNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
     }
 
     private void menuNavigation() {
@@ -69,8 +78,6 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.menu_home) {
-                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                    startActivity(intent);
                     return true;
                 } else if (item.getItemId() == R.id.menu_user) {
                     Intent intent = new Intent(getApplicationContext(), UserActivity.class);

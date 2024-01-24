@@ -101,21 +101,18 @@ public class ProductActivity extends AppCompatActivity {
 
     private void handleAddToCartButton() {
         //TODO: Cài đặt giỏ hàng
+        Button btnAddToCart = findViewById(R.id.btnAddToCart);
 
-
+        btnAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showBottomSheetDialog();
+            }
+        });
     }
 
     private void handleTestWithARButton() {
         //TODO: handle test with AR button
-//        Button btnAddToCart = findViewById(R.id.btnAddToCart);
-//
-//        btnAddToCart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showBottomSheetDialog();
-//            }
-//        });
-
         Button btnTestWithAR = findViewById(R.id.btnTestWithAR);
 
         btnTestWithAR.setOnClickListener(new View.OnClickListener() {
