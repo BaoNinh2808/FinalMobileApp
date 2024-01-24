@@ -26,12 +26,22 @@ public class FavoriteDatabase {
 
     private MutableLiveData<List<Favorite>> favoriteListLiveData = new MutableLiveData<>();
 
-    public FavoriteDatabase(){
+    private FavoriteDatabase(){
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
         favoriteList = new ArrayList<>();
+        fetchFavoriteList();
     }
 
+    //create a singleton
+    private static FavoriteDatabase instance;
+
+    public static FavoriteDatabase getInstance(){
+        if (instance == null){
+            instance = new FavoriteDatabase();
+        }
+        return instance;
+    }
 
     public void addFavoriteItem(Map<String, Object> FavoriteItem){
         db.collection("Favorite")
@@ -73,6 +83,14 @@ public class FavoriteDatabase {
                 break;
             }
         }
+    }
+    public boolean isFavorite(String productId) {
+        for (Favorite favorite : favoriteList) {
+            if (favorite.getProduct_id().equals(productId)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void fetchFavoriteList(){

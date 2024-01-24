@@ -33,6 +33,7 @@ public class CartBottomSheetFragment extends BottomSheetDialogFragment {
     private TextView productPrice, productName, productQuantity;
 
     private ImageView btnMinus, btnPlus;
+    private String currentProductAmount;
     private Product currentProduct;
     private String currentProductID;
     private ProductListManager productListManager;
@@ -127,7 +128,7 @@ public class CartBottomSheetFragment extends BottomSheetDialogFragment {
         Picasso.get().load(currentProduct.getImageUrl()).into(productImage);
         productPrice.setText(currentProduct.getPrice());
         productName.setText(currentProduct.getName());
-
+        productQuantity.setText(currentProductAmount);
     }
 
     private void setCurrentProduct() {
@@ -135,6 +136,7 @@ public class CartBottomSheetFragment extends BottomSheetDialogFragment {
         if (bundle != null) {
             currentProductID = bundle.getString("product_id", "");
             currentProduct = productListManager.getProductById(currentProductID);
+            currentProductAmount = bundle.getString("product_amount", "1");
         }
     }
 }

@@ -51,7 +51,7 @@ public class ProductActivity extends AppCompatActivity {
         specifyProductManager = new SpecifyProductManager();
         productListManager = new ProductListManager();
 
-        favoriteDatabase = new FavoriteDatabase();
+        favoriteDatabase = FavoriteDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
         recyclerViewSimilarProducts = findViewById(R.id.recyclerViewSimilarProducts);
@@ -100,19 +100,18 @@ public class ProductActivity extends AppCompatActivity {
     }
 
     private void handleAddToCartButton() {
-        //TODO: Cài đặt giỏ hàng
         Button btnAddToCart = findViewById(R.id.btnAddToCart);
 
         btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 showBottomSheetDialog();
             }
         });
     }
 
     private void handleTestWithARButton() {
-        //TODO: handle test with AR button
         Button btnTestWithAR = findViewById(R.id.btnTestWithAR);
 
         btnTestWithAR.setOnClickListener(new View.OnClickListener() {
@@ -128,7 +127,7 @@ public class ProductActivity extends AppCompatActivity {
     private void showBottomSheetDialog() {
         Bundle bundle = new Bundle();
         bundle.putString("product_id", currentProduct.getId());
-
+        bundle.putString("product_amount", ((TextView) findViewById(R.id.txtNumberSelectedProduct)).getText().toString());
         CartBottomSheetFragment cartFragment = new CartBottomSheetFragment();
         cartFragment.setArguments(bundle);
 
@@ -137,8 +136,11 @@ public class ProductActivity extends AppCompatActivity {
 
         private void handleFavouriteButton() {
             ImageView imageViewFavorite = findViewById(R.id.imageViewFavorite);
+            final boolean[] isFavorite = {favoriteDatabase.isFavorite(currentProduct.getId())}; // Using an array to make it effectively final
 
-            final boolean[] isFavorite = {false}; // Using an array to make it effectively final
+            if (isFavorite[0]) {
+                imageViewFavorite.setImageDrawable(getResources().getDrawable(R.drawable.icon_favorite, null));
+            }
 
             imageViewFavorite.setOnClickListener(v -> {
                 if (isFavorite[0]) {
@@ -179,7 +181,6 @@ public class ProductActivity extends AppCompatActivity {
         productAdapter.setOnItemClickListener(p -> {
             Intent intent = new Intent(this, ProductActivity.class);
             intent.putExtra("product_id", p.getId());
-            Log.d("TAG", "initialRecyclerViewSimilarProducts: " + p.getName());
             startActivity(intent);
         });
         recyclerView.setAdapter(productAdapter);
@@ -187,8 +188,6 @@ public class ProductActivity extends AppCompatActivity {
     }
 
     private void initialView(Product product) {
-        //TODO: nhớ lấy isfavourite từ firebase để set icon
-
         ImageView imageViewProduct = findViewById(R.id.imageViewProduct);
         Picasso.get().load(product.getImageUrl()).into(imageViewProduct);
 
@@ -199,6 +198,7 @@ public class ProductActivity extends AppCompatActivity {
         textViewProductPrice.setText(product.getPrice());
 
         TextView textViewProductDescription = findViewById(R.id.txtProductDescription);
+//        Log.d("TAG", "initialView: " + product.getDescription());
         textViewProductDescription.setText(product.getDescription());
 
         TextView textViewProductCategory = findViewById(R.id.txtCategoryProduct);

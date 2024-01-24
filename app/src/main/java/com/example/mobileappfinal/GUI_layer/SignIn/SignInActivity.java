@@ -57,6 +57,11 @@ public class SignInActivity extends AppCompatActivity {
         setAndGetAllWin();
         setEventClickButtonSignIn();
         setEventClickTextViewSignUp();
+        if (mAuth != null){
+            Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     private void setEventClickTextViewSignUp() {

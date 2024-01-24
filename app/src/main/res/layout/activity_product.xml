@@ -75,7 +75,7 @@
                 <ImageView
                     android:id="@+id/imageViewProduct"
                     android:layout_width="0dp"
-                    android:layout_height="380dp"
+                    android:layout_height="340dp"
                     android:contentDescription="@string/contentDesImage"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -102,15 +102,16 @@
 
                     <TextView
                         android:id="@+id/txtProductName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_width="240dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="start"
                         android:layout_marginStart="20dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:gravity="bottom"
+                        android:gravity="center|start"
                         android:text="@string/product_name_label"
+                        android:maxLines="2"
                         android:textColor="@color/black"
-                        android:textSize="27sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/txtProductPrice"
@@ -119,7 +120,7 @@
                         android:layout_gravity="end"
                         android:layout_marginEnd="20dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:gravity="bottom|end"
+                        android:gravity="center|end"
                         android:text="@string/product_price_label"
                         android:textColor="@color/black"
                         android:textSize="27sp" />
@@ -200,7 +201,7 @@
 
                 <TextView
                     android:id="@+id/txtProductDescription"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="6dp"
@@ -209,6 +210,7 @@
                     android:text="@string/product_description_contents"
                     android:textColor="@color/black"
                     android:textSize="13sp"
+                    android:maxLines="5"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView16" />

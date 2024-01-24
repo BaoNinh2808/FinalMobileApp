@@ -26,8 +26,7 @@ public class FavoriteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_favorite, container, false);
 
-        favoriteDatabase = new FavoriteDatabase();
-        favoriteDatabase.fetchFavoriteList();
+        favoriteDatabase = FavoriteDatabase.getInstance();
 
         setAndGetAllView(view);
         observeCartItemList();

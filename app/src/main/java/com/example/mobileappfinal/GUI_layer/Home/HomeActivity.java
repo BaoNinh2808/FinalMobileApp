@@ -20,7 +20,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobileappfinal.Business_layer.Product.ProductListManager;
+import com.example.mobileappfinal.DTO.Favorite;
 import com.example.mobileappfinal.DTO.Product;
+import com.example.mobileappfinal.Data_layer.Cart.FavoriteDatabase;
 import com.example.mobileappfinal.GUI_layer.Cart.CartActivity;
 import com.example.mobileappfinal.GUI_layer.Categories.MainCategoriesActivity;
 import com.example.mobileappfinal.GUI_layer.Product.ProductActivity;
@@ -47,6 +49,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        FavoriteDatabase favoriteDatabase = FavoriteDatabase.getInstance(); // để fetch data từ firebase về trước
 
         productListManager = new ProductListManager();
 

@@ -62,7 +62,7 @@ public class ProductDatabase {
                                 tempProduct.setHot(document.getBoolean("isHot"));
                                 tempProduct.setAvailableAmount(document.getLong("available").intValue());
                                 tempProduct.setSoldAmount(document.getLong("sold").intValue());
-
+                                tempProduct.setDescription(document.getString("description"));
                                 productList.add(tempProduct);
                             }
 
